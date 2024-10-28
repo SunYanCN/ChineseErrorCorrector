@@ -3,10 +3,11 @@ from opencc import OpenCC
 import random
 import json
 import os
-from ChineseErrorCorrector.config import LTPPath
+from ChineseErrorCorrector.config import LTPPath, DEVICE
 from ChineseErrorCorrector.utils import set_seed
 
 ltp = LTP(LTPPath.LTP_MODEL_DIR)
+ltp.to(DEVICE)
 cc = OpenCC('t2s')
 set_seed()
 
