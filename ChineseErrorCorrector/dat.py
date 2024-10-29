@@ -5,57 +5,79 @@ import json
 import os
 from ChineseErrorCorrector.config import LTPPath, DEVICE
 from ChineseErrorCorrector.utils import set_seed
+from tqdm import tqdm
 
 ltp = LTP(LTPPath.LTP_MODEL_DIR)
-ltp.to(DEVICE)
+print(f"模型已经加载到{DEVICE}")
+ltp = ltp.to(DEVICE)
 cc = OpenCC('t2s')
 set_seed()
 
 
 class GrammarErrorDat(object):
+    def __init__(self):
+        self.confuse_set = self.load_confuse_set()
+
+    def load_confuse_set(self):
+        """
+        加载混淆字集合
+        :return: 字典，键为汉字，值为其对应的混淆字符列表
+        """
+        confuse_set = {}
+        file_path = os.path.join(LTPPath.LTP_DATA_PATH, 'token_set.txt')
+
+        with open(file_path, 'r', encoding='utf-8') as f:
+            for line in f:
+                ch, words = line.strip().split('\t')
+                ch = cc.convert(ch)
+                if ch not in confuse_set:
+                    word_list = []
+                    for word in words:
+                        if word == cc.convert(word):
+                            word_list.append(word)
+
+                    confuse_set[ch] = word_list
+
+        return confuse_set
 
     def wrong_word(self, line):
         """
-        错别字
-        :param line:
-        :return:
+        生成含有错别字的句子
+        :param line: 输入句子
+        :return: 生成的带有错误标记的句子
         """
-        confuse_set = {}
-
-        with open(os.path.join(LTPPath.LTP_DATA_PATH, 'token_set.txt'), 'r', encoding='utf-8') as f:
-            lines = f.readlines()
-            for line_ in lines:
-                temp_line = line_.strip('\n').split('\t')
-                ch = temp_line[0]
-                if cc.convert(ch) == ch:
-                    confuse_set[ch] = []
-                    for word in temp_line[1]:
-                        new_word = cc.convert(word)
-                        if word == new_word:
-                            confuse_set[temp_line[0]].append(word)
         line_len = len(line)
-        confuse_index = random.randint(0, line_len - 1)
-        while confuse_set.get(line[confuse_index]) == None:
-            confuse_index = random.randint(0, line_len - 1)
-        new_line = {}
-        label = []
-        source = ""
-        target = line
-        label.append('correct')
-        for j in range(line_len):
-            if j == confuse_index:
-                confuse_word_set = confuse_set[line[j]]
-                new_index = random.randint(0, len(confuse_word_set) - 1)
-                source += confuse_word_set[new_index]
-                label.append('char_error')
+        if line_len == 0:
+            return line
+
+        # 随机选择一个可以替换的字符位置
+        confuse_index = random.choice([
+            i for i, ch in enumerate(line) if ch in self.confuse_set
+        ])
+
+        if confuse_index is None:
+            return line  # 没有可替换的字符，返回原句子
+
+        confuse_word_set = self.confuse_set[line[confuse_index]]
+        if not confuse_word_set:
+            return line  # 没有可用的混淆字符，返回原句子
+
+        new_line = {
+            'source': '',
+            'target': line,
+            'label': []
+        }
+
+        # 构造错误句子
+        for i, ch in enumerate(line):
+            if i == confuse_index:
+                new_ch = random.choice(confuse_word_set)
+                new_line['source'] += new_ch
+                new_line['label'].append('char_error')
             else:
-                source += line[j]
-                label.append('correct')
-        source += ""
-        label.append('correct')
-        new_line['source'] = source
-        new_line['target'] = target
-        new_line['label'] = label
+                new_line['source'] += ch
+                new_line['label'].append('correct')
+
         return new_line['source']
 
     def lack_word(self, line):
@@ -879,35 +901,35 @@ class GrammarErrorDat(object):
 
 if __name__ == '__main__':
     cged_tool = GrammarErrorDat()
-    print(cged_tool.lack_word("小明住在北京"))
-
-    print(cged_tool.wrong_word("小明住在北京"))
-
-    print(cged_tool.lack_char("小明住在北京"))
-
-    print(cged_tool.wrong_char("小明住在北京"))
-
-    print(cged_tool.unknow_sub("小明住在北京"))
-
-    print(cged_tool.unknow_pred("小明住在北京"))
-
-    print(cged_tool.lack_obj("小明住在北京"))
-
-    print(cged_tool.lack_others("小明住在北京"))
-
-    print(cged_tool.red_sub("小明住在北京"))
-
-    print(cged_tool.red_fun("小明住在北京"))
-
-    print(cged_tool.red_component("小明住在北京"))
-
-    print(cged_tool.wrong_sentence_order("小明住在北京"))
-
-    print(cged_tool.wrong_ver_obj("小明住在北京"))
-
-    print(cged_tool.wrong_ver_obj("小明住在北京"))
-
-    print(cged_tool.other_wrong("小明住在北京"))
+    # print(cged_tool.lack_word("小明住在北京"))
+    for i in tqdm(range(10000)):
+        cged_tool.wrong_word("一个个乡村特色产业，蕴藏群众致富经，拓宽发展振兴路。持续加强品种保护和培育，优化种植方式，创新营销模式，把特色产业做得更大，就能带动更多群众增收致富。")
+    #
+    # print(cged_tool.lack_char("小明住在北京"))
+    #
+    # print(cged_tool.wrong_char("小明住在北京"))
+    #
+    # print(cged_tool.unknow_sub("小明住在北京"))
+    #
+    # print(cged_tool.unknow_pred("小明住在北京"))
+    #
+    # print(cged_tool.lack_obj("小明住在北京"))
+    #
+    # print(cged_tool.lack_others("小明住在北京"))
+    #
+    # print(cged_tool.red_sub("小明住在北京"))
+    #
+    # print(cged_tool.red_fun("小明住在北京"))
+    #
+    # print(cged_tool.red_component("小明住在北京"))
+    #
+    # print(cged_tool.wrong_sentence_order("小明住在北京"))
+    #
+    # print(cged_tool.wrong_ver_obj("小明住在北京"))
+    #
+    # print(cged_tool.wrong_ver_obj("小明住在北京"))
+    #
+    # print(cged_tool.other_wrong("小明住在北京"))
 
     """
     python -m twine upload --repository-url https://upload.pypi.org/legacy/  dist/*
