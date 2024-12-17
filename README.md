@@ -1,5 +1,5 @@
 #  一键语法错误增强工具
-[**🇨🇳中文**](https://github.com/TW-NLP/ChineseErrorCorrector/edit/main/README.md) 
+[**🇨🇳中文**](https://github.com/TW-NLP/ChineseErrorCorrector/blob/main/README.md) 
 
 
 -----------------
