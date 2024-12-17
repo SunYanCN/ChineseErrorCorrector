@@ -3,7 +3,7 @@
 
 <div align="center">
   <a href="https://github.com/TW-NLP/ChineseErrorCorrector">
-    <img src="images/1.png" alt="Logo" height="156">
+    <img src="images/image_fx_.jpg" alt="Logo" height="156">
   </a>
 </div>
 
