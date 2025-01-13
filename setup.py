@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 setuptools.setup(
     name="ChineseErrorCorrector",  # 模块名称
-    version="1.5.0",  # 当前版本
+    version="1.6.0",  # 当前版本
     author="tianwei",  # 作者
     author_email="1784526116@qq.com",  # 作者邮箱
     description="Syntax Error Data Enhancement",  # 模块简介
