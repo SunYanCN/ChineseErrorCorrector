@@ -21,7 +21,7 @@
 
 [2024/06] v0.1.0版本：开源一键语法错误增强工具，该工具可以进行14种语法错误的增强，不同行业可以根据自己的数据进行错误替换，来训练自己的语法和拼写模型。详见[Tag-v0.1.0](https://github.com/TW-NLP/ChineseErrorCorrector/tree/0.1.0)
 
-### 评估结果
+## 评估结果
 - 评估指标：F1
 
 
@@ -31,7 +31,7 @@
 | twnlp/ChineseErrorCorrector-32B        | https://huggingface.co/twnlp/ChineseErrorCorrector-32B/tree/main                                    | Qwen/Qwen2.5-32B-Instruct |     |       |  | |     |
 
 ## 使用
-
+### transformers 
 ```shell
 # pip install transformers
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -54,3 +54,6 @@ outputs = model.generate(inputs, max_new_tokens=1024, temperature=0, do_sample=F
 print(tokenizer.decode(outputs[0]))
 
 ```
+
+### VLLM
+ 
