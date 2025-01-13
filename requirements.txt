@@ -124,5 +124,5 @@ zope.event==5.0
 zope.interface==7.0.3
 netifaces==0.11.0
 pycryptodome==3.15.0
-ltp
-opencc
+ltp==4.2.14
+opencc==1.1.6
