@@ -31,3 +31,26 @@
 | twnlp/ChineseErrorCorrector-32B        | https://huggingface.co/twnlp/ChineseErrorCorrector-32B/tree/main                                    | Qwen/Qwen2.5-32B-Instruct |     |       |  | |     |
 
 ## 使用
+
+```shell
+# pip install transformers
+from transformers import AutoModelForCausalLM, AutoTokenizer
+checkpoint = "twnlp/ChineseErrorCorrector-7B"
+
+device = "cuda" # for GPU usage or "cpu" for CPU usage
+tokenizer = AutoTokenizer.from_pretrained(checkpoint)
+model = AutoModelForCausalLM.from_pretrained(checkpoint).to(device)
+
+input_content = "你是一个拼写纠错专家，对原文进行错别字纠正，不要更改原文字数，原文为：\n少先队员因该为老人让坐。"
+
+messages = [{"role": "user", "content": input_content}]
+input_text=tokenizer.apply_chat_template(messages, tokenize=False)
+
+print(input_text)
+
+inputs = tokenizer.encode(input_text, return_tensors="pt").to(device)
+outputs = model.generate(inputs, max_new_tokens=1024, temperature=0, do_sample=False, repetition_penalty=1.08)
+
+print(tokenizer.decode(outputs[0]))
+
+```
