@@ -14,7 +14,7 @@
 
 
 ## 介绍
-支持中文拼写和语法错误纠正，并开源拼写和语法错误的增强工具，荣获2024CCL 冠军 🏆，[论文🔗](https://aclanthology.org/2024.ccl-3.31/)
+支持中文拼写和语法错误纠正，并开源拼写和语法错误的增强工具，荣获2024CCL 冠军 🏆，[查看论文](https://aclanthology.org/2024.ccl-3.31/) 。
 
 ## 🔥🔥🔥 新闻
 [2025/01] 使用38万开源数据，基于Qwen2.5训练中文拼写纠错模型，支持语似、形似等错误纠正，发布了[twnlp/ChineseErrorCorrector-7B](https://huggingface.co/twnlp/ChineseErrorCorrector-7B)，[twnlp/ChineseErrorCorrector-32B-LORA](https://huggingface.co/twnlp/ChineseErrorCorrector-32B-LORA/tree/main)
