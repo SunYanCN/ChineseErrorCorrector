@@ -114,3 +114,9 @@ If this work is helpful, please kindly cite as:
   pages={278--284},
   year={2024}
 }
+```
+
+
+## Star History
+
+![Star History Chart](https://api.star-history.com/svg?repos=TW-NLP/ChineseErrorCorrector&type=Date)
