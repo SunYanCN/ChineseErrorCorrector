@@ -35,7 +35,7 @@
 - 评估指标：F1
 
 
-| Model Name       | Model Link                                                                                                              | Base Model                 | Avg        | SIGHAN-2015 | EC-LAW (法律)| EC-MED （医疗）  | EC-ODW（公文） |
+| Model Name       | Model Link                                                                                                              | Base Model                 | Avg        | SIGHAN-2015(通用) | EC-LAW(法律)| EC-MED(医疗)| EC-ODW(公文)|
 |:-----------------|:------------------------------------------------------------------------------------------------------------------------|:---------------------------|:-----------|:------------|:-------|:-------|:--------|
 | twnlp/ChineseErrorCorrector-1.5B        | https://huggingface.co/twnlp/ChineseErrorCorrector-1.5B/tree/main                                    | Qwen/Qwen2.5-1.5B-Instruct | 0.459     | 0.346      | 0.517 | 0.433 | 0.540     |
 | twnlp/ChineseErrorCorrector-7B        | https://huggingface.co/twnlp/ChineseErrorCorrector-7B/tree/main                                    | Qwen/Qwen2.5-7B-Instruct | 0.712     | 0.592      | 0.787 | 0.677 | 0.793     |
