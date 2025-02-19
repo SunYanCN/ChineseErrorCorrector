@@ -42,6 +42,15 @@
 | twnlp/ChineseErrorCorrector-7B        | https://huggingface.co/twnlp/ChineseErrorCorrector-7B/tree/main                                    | Qwen/Qwen2.5-7B-Instruct | 0.712     | 0.592      | 0.787 | 0.677 | 0.793     |
 | twnlp/ChineseErrorCorrector-32B-LORA        | https://huggingface.co/twnlp/ChineseErrorCorrector-32B-LORA/tree/main                                    | Qwen/Qwen2.5-32B-Instruct |  0.757   |    0.594   | 0.776 |0.794 |   0.864  |
 
+## 文本纠错评测（拼写错误+语法错误）
+- 评估指标：F1
+
+
+| Model Name       | Model Link                                                                                                              | Base Model                 | Avg        | NLPCC18 | MuCGEC|
+|:-----------------|:------------------------------------------------------------------------------------------------------------------------|:---------------------------|:-----------|:------------|:-------|
+| 开发中       | 开发中                                    | 开发中 | 待评测     | 待评测      | 待评测 |
+
+
 ## 使用
 ### transformers 
 ```shell
