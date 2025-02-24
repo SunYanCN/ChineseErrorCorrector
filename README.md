@@ -27,7 +27,8 @@
 
 | 数据集名称     | 数据链接                                                                                                      | 数据量和类别说明                                                                                                            | 描述          |
 |:--------------|:-----------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------|:------------|
-| CTC（拼写纠错数据集） |[twnlp/csc_data](https://huggingface.co/datasets/twnlp/csc_data)  | W271K：279,816 条，Medical：39,303 条，Lemon：22,259 条，ECSpell：6,688 条，CSCD：35,001 条 | 用于中文拼写纠错的多类别大规模数据集 |
+| CSC（拼写纠错数据集） |[twnlp/csc_data](https://huggingface.co/datasets/twnlp/csc_data)  | W271K：279,816 条，Medical：39,303 条，Lemon：22,259 条，ECSpell：6,688 条，CSCD：35,001 条 | 用于中文拼写纠错的多类别大规模数据集 |
+| CGC（语法纠错数据集） |[twnlp/cgc_data](https://huggingface.co/datasets/twnlp/cgc_data)  | CGED：20449 条，FCGEC：37354 条，MuCGEC：2467 条 | 用于中文语法纠错的多类别大规模数据集 |
 | Lang8+HSK（百万语料-拼写和语法错误混合数据集） |[twnlp/lang8_hsk](https://huggingface.co/datasets/twnlp/lang8_hsk)  | 1568885条 | 用于中文拼写和语法纠错大规模数据集 |
 
 
