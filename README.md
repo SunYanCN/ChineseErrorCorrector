@@ -47,13 +47,19 @@
 | twnlp/ChineseErrorCorrector-32B-LORA        | https://huggingface.co/twnlp/ChineseErrorCorrector-32B-LORA/tree/main                                    | Qwen/Qwen2.5-32B-Instruct |  0.757   |    0.594   | 0.776 |0.794 |   0.864  |
 
 ## 文本纠错评测（拼写错误+语法错误）
-- 评估工具：ChERRANT  [评测工具](https://github.com/HillZhang1999/MuCGEC) 
+- 评估工具：ChERRANT  [评测工具](https://github.com/HillZhang1999/MuCGEC)
+- 评估数据：[NaCGEC](https://github.com/masr2000/NaCGEC)
 - 评估指标：F1-0.5(语法)、F1(拼写)
 
 
-| Test Dataset       | Model Name       | Model Link                                                                                                              | Base Model                 |    Prec     | Rec | F0.5 |
-|:-----------------|:-----------------|:------------------------------------------------------------------------------------------------------------------------|:---------------------------|:-----------|:------------|:-------|
-| NaSGEC-NLPCC2023    |  twnlp/ChineseErrorCorrector2-7B | https://huggingface.co/twnlp/ChineseErrorCorrector2-7B       | Qwen/Qwen2.5-7B-Instruct                                  |  | 待评测     | 待评测      | 待评测 |
+| Model Name       | Model Link                                                                                                              |    Prec     | Rec | F0.5 |
+|:-----------------|:------------------------------------------------------------------------------------------------------------------------|:---------------------------|:-----------|:------------|:-------|
+|  twnlp/ChineseErrorCorrector2-7B | https://huggingface.co/twnlp/ChineseErrorCorrector2-7B       |  0.5546     | 0.5743      | 0.5584 |
+|  HW_TSC_nlpcc2023_cgec(华为) |        |  0.5095     | 0.3129      | 0.4526 |
+| 鱼饼啾啾Plus |        |  57.08     | 12.94      | 33.94 |
+| CUHK_SU |        |  38.82     | 15.58      | 29.90 |
+| CGEC++ |        |  24.14     | 7.35      | 16.57 |
+| zhao_jia |        |  17.19     | 14.78      | 16.65 |
 
 
 ## 使用
