@@ -73,7 +73,7 @@ device = "cuda" # for GPU usage or "cpu" for CPU usage
 tokenizer = AutoTokenizer.from_pretrained(checkpoint)
 model = AutoModelForCausalLM.from_pretrained(checkpoint).to(device)
 
-input_content = "你是一个拼写纠错专家，对原文进行错别字纠正，不要更改原文字数，原文为：\n少先队员因该为老人让坐。"
+input_content = "你是一个文本纠错专家，纠正输入句子中的语法错误，并输出正确的句子，输入句子为：\n少先队员因该为老人让坐。"
 
 messages = [{"role": "user", "content": input_content}]
 input_text=tokenizer.apply_chat_template(messages, tokenize=False)
@@ -106,7 +106,7 @@ llm = LLM(model="twnlp/ChineseErrorCorrector-7B")
 # Prepare your prompts
 prompt = "少先队员因该为老人让坐。"
 messages = [
-    {"role": "system", "content": "你是一个拼写纠错专家，对原文进行错别字纠正，不要更改原文字数，原文为："},
+    {"role": "system", "content": "你是一个文本纠错专家，纠正输入句子中的语法错误，并输出正确的句子，输入句子为："},
     {"role": "user", "content": prompt}
 ]
 text = tokenizer.apply_chat_template(
