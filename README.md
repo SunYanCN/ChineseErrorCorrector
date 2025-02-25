@@ -67,7 +67,7 @@
 ```shell
 # pip install transformers
 from transformers import AutoModelForCausalLM, AutoTokenizer
-checkpoint = "twnlp/ChineseErrorCorrector-7B"
+checkpoint = "twnlp/ChineseErrorCorrector2-7B"
 
 device = "cuda" # for GPU usage or "cpu" for CPU usage
 tokenizer = AutoTokenizer.from_pretrained(checkpoint)
@@ -94,7 +94,7 @@ from transformers import AutoTokenizer
 from vllm import LLM, SamplingParams
 
 # Initialize the tokenizer
-tokenizer = AutoTokenizer.from_pretrained("twnlp/ChineseErrorCorrector-7B")
+tokenizer = AutoTokenizer.from_pretrained("twnlp/ChineseErrorCorrector2-7B")
 
 # Pass the default decoding hyperparameters of twnlp/ChineseErrorCorrector-7B
 # max_tokens is for the maximum length for generation.
