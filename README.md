@@ -51,9 +51,9 @@
 - 评估指标：F1-0.5(语法)、F1(拼写)
 
 
-| Dataset       | Model Name       | Model Link                                                                                                              | Base Model                 |         |  | |
+| Dataset       | Model Name       | Model Link                                                                                                              | Base Model                 |    Prec     | Rec | F0.5 |
 |:-----------------|:-----------------|:------------------------------------------------------------------------------------------------------------------------|:---------------------------|:-----------|:------------|:-------|
-| NaSGEC-NLPCC2023      | 开发中       | 开发中                                    | 开发中 | 待评测     | 待评测      | 待评测 |
+| NaSGEC-NLPCC2023     twnlp/ChineseErrorCorrector2-7B | https://huggingface.co/twnlp/ChineseErrorCorrector2-7B       | Qwen/Qwen2.5-7B-Instruct                                  |  | 待评测     | 待评测      | 待评测 |
 
 
 ## 使用
