@@ -17,6 +17,9 @@
 支持中文拼写和语法错误纠正，并开源拼写和语法错误的增强工具，荣获2024CCL 冠军 🏆，[查看论文](https://aclanthology.org/2024.ccl-3.31/) 。
 
 ## 🔥🔥🔥 新闻
+
+[2025/02/25] 使用200万纠错数据进行多轮迭代训练，发布了[twnlp/ChineseErrorCorrector2-7B](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B)，在 [NaCGEC-2023NLPCC官方评测数据集](https://github.com/masr2000/NaCGEC)上，超越第一名华为10个点，遥遥领先，推荐使用！
+
 [2025/02] 为方便部署，发布了[twnlp/ChineseErrorCorrector-1.5B](https://huggingface.co/twnlp/ChineseErrorCorrector-1.5B)
 
 [2025/01] 使用38万开源数据，基于Qwen2.5训练中文拼写纠错模型，支持语似、形似等错误纠正，发布了[twnlp/ChineseErrorCorrector-7B](https://huggingface.co/twnlp/ChineseErrorCorrector-7B)，[twnlp/ChineseErrorCorrector-32B-LORA](https://huggingface.co/twnlp/ChineseErrorCorrector-32B-LORA/tree/main)
@@ -45,12 +48,12 @@
 
 ## 文本纠错评测（拼写错误+语法错误）
 - 评估工具：ChERRANT  [评测工具](https://github.com/HillZhang1999/MuCGEC) 
-- 评估指标：F1-0.5
+- 评估指标：F1-0.5(语法)、F1(拼写)
 
 
-| Model Name       | Model Link                                                                                                              | Base Model                 | Avg        | NLPCC18 | MuCGEC|
-|:-----------------|:------------------------------------------------------------------------------------------------------------------------|:---------------------------|:-----------|:------------|:-------|
-| 开发中       | 开发中                                    | 开发中 | 待评测     | 待评测      | 待评测 |
+| Dataset       | Model Name       | Model Link                                                                                                              | Base Model                 |         |  | |
+|:-----------------|:-----------------|:------------------------------------------------------------------------------------------------------------------------|:---------------------------|:-----------|:------------|:-------|
+| NaSGEC-NLPCC2023      | 开发中       | 开发中                                    | 开发中 | 待评测     | 待评测      | 待评测 |
 
 
 ## 使用
