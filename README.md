@@ -44,7 +44,7 @@
 | twnlp/ChineseErrorCorrector-32B-LORA        | https://huggingface.co/twnlp/ChineseErrorCorrector-32B-LORA/tree/main                                    | Qwen/Qwen2.5-32B-Instruct |  0.757   |    0.594   | 0.776 |0.794 |   0.864  |
 
 ## 文本纠错评测（拼写错误+语法错误）
-- 评估指标：ChERRANT F1-0.5[指标评测参考](https://github.com/HillZhang1999/MuCGEC) 
+- 评估指标：ChERRANT  [评测工具](https://github.com/HillZhang1999/MuCGEC) 
 
 
 | Model Name       | Model Link                                                                                                              | Base Model                 | Avg        | NLPCC18 | MuCGEC|
