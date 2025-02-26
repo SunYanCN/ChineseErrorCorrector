@@ -49,7 +49,7 @@
 ## 文本纠错评测（拼写错误+语法错误）
 - 评估工具：ChERRANT  [评测工具](https://github.com/HillZhang1999/MuCGEC)
 - 评估数据：[NaCGEC](https://github.com/masr2000/NaCGEC)
-- 评估指标：F1-0.5(语法)、F1(拼写)
+- 评估指标：F1-0.5
 
 
 | Model Name       | Model Link                                                                                                              |    Prec     | Rec | F0.5 |
