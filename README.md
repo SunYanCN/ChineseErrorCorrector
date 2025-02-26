@@ -101,7 +101,7 @@ tokenizer = AutoTokenizer.from_pretrained("twnlp/ChineseErrorCorrector2-7B")
 sampling_params = SamplingParams(repetition_penalty=1.05, max_tokens=512)
 
 # Input the model name or path. Can be GPTQ or AWQ models.
-llm = LLM(model="twnlp/ChineseErrorCorrector-7B")
+llm = LLM(model="twnlp/ChineseErrorCorrector2-7B")
 
 # Prepare your prompts
 prompt = "少先队员因该为老人让坐。"
