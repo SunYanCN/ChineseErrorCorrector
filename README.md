@@ -106,8 +106,7 @@ llm = LLM(model="twnlp/ChineseErrorCorrector-7B")
 # Prepare your prompts
 prompt = "少先队员因该为老人让坐。"
 messages = [
-    {"role": "system", "content": "你是一个文本纠错专家，纠正输入句子中的语法错误，并输出正确的句子，输入句子为："},
-    {"role": "user", "content": prompt}
+    {"role": "user", "content": "你是一个文本纠错专家，纠正输入句子中的语法错误，并输出正确的句子，输入句子为："+prompt}
 ]
 text = tokenizer.apply_chat_template(
     messages,
