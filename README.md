@@ -96,7 +96,7 @@ from vllm import LLM, SamplingParams
 # Initialize the tokenizer
 tokenizer = AutoTokenizer.from_pretrained("twnlp/ChineseErrorCorrector2-7B")
 
-# Pass the default decoding hyperparameters of twnlp/ChineseErrorCorrector-7B
+# Pass the default decoding hyperparameters of twnlp/ChineseErrorCorrector2-7B
 # max_tokens is for the maximum length for generation.
 sampling_params = SamplingParams(repetition_penalty=1.05, max_tokens=512)
 
