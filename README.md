@@ -64,6 +64,11 @@
 
 ## 使用
 ### transformers 
+
+```shell
+pip install transformers
+```
+
 ```shell
 # pip install transformers
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -88,6 +93,10 @@ print(tokenizer.decode(outputs[0]))
 ```
 
 ### VLLM
+
+```shell
+pip install vllm==0.3.3
+```
 
 ```shell
 from transformers import AutoTokenizer
@@ -122,6 +131,14 @@ for output in outputs:
     prompt = output.prompt
     generated_text = output.outputs[0].text
     print(f"Prompt: {prompt!r}, Generated text: {generated_text!r}") 
+```
+
+
+### VLLM 异步推理
+```shell
+cd ChineseErrorCorrector
+
+python main.py
 ```
 
 ## Citation

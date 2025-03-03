@@ -23,7 +23,7 @@ class ErrorCorrect(object):
 if __name__ == '__main__':
     ec = ErrorCorrect()
 
-    #
+    # 测试用例
     input_text = [
         "少先队员因该为老人让坐。"
     ]
