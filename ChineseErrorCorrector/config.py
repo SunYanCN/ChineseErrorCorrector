@@ -1,7 +1,7 @@
 import os
 import torch
 
-# os.environ['CUDA_VISIBLE_DEVICES']="2,3"
+os.environ['CUDA_VISIBLE_DEVICES'] = "0"
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 MODEL_DIR = os.path.join(PROJECT_DIR, 'pre_model')

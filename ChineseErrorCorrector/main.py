@@ -2,7 +2,6 @@ import os
 import sys
 import asyncio
 
-os.environ['CUDA_VISIBLE_DEVICES'] = "2"
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from ChineseErrorCorrector.llm.qwen_text_correct_infer import VLLMTextCorrectInfer
