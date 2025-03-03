@@ -17,5 +17,5 @@ class LTPPath(object):
 
 class Qwen2TextCorConfig(object):
     MAX_LENGTH = 32000
-    DEFAULT_CKPT_PATH = os.path.join(MODEL_DIR, 'ChineseErrorCorrector-7B')
-    GPU_MEMARY = 0.7
+    DEFAULT_CKPT_PATH = os.path.join(MODEL_DIR, 'ChineseErrorCorrector2-7B')
+    GPU_MEMARY = 0.9

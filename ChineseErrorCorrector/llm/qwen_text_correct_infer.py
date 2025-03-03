@@ -15,6 +15,7 @@ class VLLMTextCorrectInfer(object):
 
     def __init__(self, ):
         set_seed(42)
+        self.prompt_prefix = "你是一个文本纠错专家，纠正输入句子中的语法错误，并输出正确的句子，输入句子为："
 
         if DEVICE == 'cpu':
             pass
@@ -47,11 +48,14 @@ class VLLMTextCorrectInfer(object):
         try:
             start_time = time.time()
             request_id = str(uuid.uuid4())
-            query = [query]
+            messages = [
+                {"role": "user", "content": self.prompt_prefix + query}
+            ]
+
             # prompt中的assistant 改为 system
 
             inputs = self.tokenizer.apply_chat_template(
-                query,
+                messages,
                 add_generation_prompt=True,
                 tokenize=True,
                 return_tensors="pt",
@@ -82,6 +86,7 @@ class VLLMTextCorrectInfer(object):
 
             return str(result_list[-1])
         except Exception as err:
+            print(err)
             if 'CUDA out of memory' in err.args[0]:
                 raise MemoryError(err)
 
@@ -124,10 +129,8 @@ class VLLMTextCorrectInfer(object):
         for pmt_i in query_list:
             prompt_sys = {}
             prompt_user = {}
-            prompt_sys['role'] = "system"
-            prompt_sys['content'] = "你是一个拼写纠错专家，对原文进行错别字纠正，不要更改原文字数，原文为："
             prompt_user['role'] = "user"
-            prompt_user['content'] = pmt_i
+            prompt_user['content'] = self.prompt_prefix + pmt_i
 
             prompt.append([prompt_sys, prompt_user])
 

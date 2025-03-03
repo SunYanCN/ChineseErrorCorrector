@@ -1,4 +1,9 @@
-from ChineseErrorCorrector.dat import GrammarErrorDat
+import os
+import sys
+import asyncio
+
+os.environ['CUDA_VISIBLE_DEVICES'] = "2"
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from ChineseErrorCorrector.llm.qwen_text_correct_infer import VLLMTextCorrectInfer
 
@@ -9,20 +14,20 @@ class ErrorCorrect(object):
     """
 
     def __init__(self):
-        self.spell = VLLMTextCorrectInfer()
-        self.dat = GrammarErrorDat()
+        self.llm_correct = VLLMTextCorrectInfer()
 
-    def spell_infer(self, input_list):
-        result = self.spell.infer_sentence(input_list)
+    async def text_infer(self, input_list):
+        result = await self.llm_correct.infer_sentence(input_list)
         return result
 
 
 if __name__ == '__main__':
     ec = ErrorCorrect()
 
-    spell_test = [
-        "少先队员因该为老人让坐。",
-        "我的明字叫小明",
-        "你好"
+    #
+    input_text = [
+        "少先队员因该为老人让坐。"
     ]
-    print(ec.spell_infer(spell_test))
+    loop = asyncio.get_event_loop()
+    result = loop.run_until_complete(ec.text_infer(input_text))
+    print(result)

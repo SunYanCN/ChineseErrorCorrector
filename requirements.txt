@@ -224,7 +224,7 @@ uv==0.5.30
 uvicorn==0.30.6
 uvloop==0.20.0
 virtualenv==20.29.2
-vllm==0.6.3
+vllm==0.3.3
 watchfiles==0.24.0
 websockets==13.1
 Werkzeug==3.0.4
