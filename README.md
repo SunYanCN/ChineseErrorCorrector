@@ -18,7 +18,7 @@
 
 ## 🔥🔥🔥 新闻
 
-[2025/02/25] 使用200万纠错数据进行多轮迭代训练，发布了[twnlp/ChineseErrorCorrector2-7B](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B)，在 [NaCGEC-2023NLPCC官方评测数据集](https://github.com/masr2000/NaCGEC)上，超越第一名华为10个点，遥遥领先，推荐使用， [技术详情](https://blog.csdn.net/qq_43765734/article/details/145858955)
+[2025/02/25] 使用200万纠错数据进行多轮迭代训练，发布了[twnlp/ChineseErrorCorrector2-7B](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B)，在 [NaCGEC-2023NLPCC官方评测数据集](https://github.com/masr2000/NaCGEC)上，超越第一名华为17个点，遥遥领先，推荐使用， [技术详情](https://blog.csdn.net/qq_43765734/article/details/145858955)
 
 [2025/02] 为方便部署，发布了[twnlp/ChineseErrorCorrector-1.5B](https://huggingface.co/twnlp/ChineseErrorCorrector-1.5B)
 
@@ -54,7 +54,7 @@
 
 | Model Name       | Model Link                                                                                                              |    Prec     | Rec | F0.5 |
 |:-----------------|:---------------------------------------------------------------|:-----------|:------------|:-------|
-|  twnlp/ChineseErrorCorrector2-7B | https://huggingface.co/twnlp/ChineseErrorCorrector2-7B       |  0.5546     | 0.5743      | 0.5584 |
+|  twnlp/ChineseErrorCorrector2-7B | https://huggingface.co/twnlp/ChineseErrorCorrector2-7B       |  0.6233     | 0.6228      | 0.6232 |
 |  HW_TSC_nlpcc2023_cgec(华为) |   未开源     |  0.5095     | 0.3129      | 0.4526 |
 | 鱼饼啾啾Plus |   未开源     |  0.5708     | 0.1294      | 0.3394 |
 | CUHK_SU |  未开源      |  0.3882     | 0.1558      | 0.2990 |
