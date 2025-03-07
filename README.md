@@ -86,7 +86,7 @@ input_text=tokenizer.apply_chat_template(messages, tokenize=False)
 print(input_text)
 
 inputs = tokenizer.encode(input_text, return_tensors="pt").to(device)
-outputs = model.generate(inputs, max_new_tokens=1024, temperature=0, do_sample=False, repetition_penalty=1.08)
+outputs = model.generate(inputs, max_new_tokens=1024, temperature=0, do_sample=False, repetition_penalty=1)
 
 print(tokenizer.decode(outputs[0]))
 
@@ -107,7 +107,7 @@ tokenizer = AutoTokenizer.from_pretrained("twnlp/ChineseErrorCorrector2-7B")
 
 # Pass the default decoding hyperparameters of twnlp/ChineseErrorCorrector2-7B
 # max_tokens is for the maximum length for generation.
-sampling_params = SamplingParams(repetition_penalty=1.05, max_tokens=512)
+sampling_params = SamplingParams(seed=42,max_tokens=512)
 
 # Input the model name or path. Can be GPTQ or AWQ models.
 llm = LLM(model="twnlp/ChineseErrorCorrector2-7B")
