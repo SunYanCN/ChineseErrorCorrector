@@ -111,6 +111,7 @@ print(response)
 ### VLLM
 
 ```shell
+pip install transformers
 pip install vllm==0.3.3
 ```
 
@@ -158,7 +159,7 @@ cd ChineseErrorCorrector
 python main.py
 ```
 
-### model 
+### modelscope 
 
 ```shell
 pip install modelscope
