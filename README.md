@@ -130,9 +130,9 @@ sampling_params = SamplingParams(seed=42,max_tokens=512)
 llm = LLM(model="twnlp/ChineseErrorCorrector2-7B")
 
 # Prepare your prompts
-prompt = "少先队员因该为老人让坐。"
+text_input = "少先队员因该为老人让坐。"
 messages = [
-    {"role": "user", "content": "你是一个文本纠错专家，纠正输入句子中的语法错误，并输出正确的句子，输入句子为："+prompt}
+    {"role": "user", "content": "你是一个文本纠错专家，纠正输入句子中的语法错误，并输出正确的句子，输入句子为："+text_input}
 ]
 text = tokenizer.apply_chat_template(
     messages,
