@@ -18,6 +18,8 @@
 
 ## 🔥🔥🔥 新闻
 
+[2025/03/10] 模型支持多种推理方式，包括 transformers、VLLM、modelscope。
+
 [2025/02/25] 使用200万纠错数据进行多轮迭代训练，发布了[twnlp/ChineseErrorCorrector2-7B](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B)，在 [NaCGEC-2023NLPCC官方评测数据集](https://github.com/masr2000/NaCGEC)上，超越第一名华为17个点，遥遥领先，推荐使用， [技术详情](https://blog.csdn.net/qq_43765734/article/details/145858955)
 
 [2025/02] 为方便部署，发布了[twnlp/ChineseErrorCorrector-1.5B](https://huggingface.co/twnlp/ChineseErrorCorrector-1.5B)
@@ -70,25 +72,39 @@ pip install transformers
 ```
 
 ```shell
-# pip install transformers
 from transformers import AutoModelForCausalLM, AutoTokenizer
-checkpoint = "twnlp/ChineseErrorCorrector2-7B"
 
-device = "cuda" # for GPU usage or "cpu" for CPU usage
-tokenizer = AutoTokenizer.from_pretrained(checkpoint)
-model = AutoModelForCausalLM.from_pretrained(checkpoint).to(device)
+model_name = "twnlp/ChineseErrorCorrector2-7B"
 
-input_content = "你是一个文本纠错专家，纠正输入句子中的语法错误，并输出正确的句子，输入句子为：\n少先队员因该为老人让坐。"
+model = AutoModelForCausalLM.from_pretrained(
+    model_name,
+    torch_dtype="auto",
+    device_map="auto"
+)
+tokenizer = AutoTokenizer.from_pretrained(model_name)
 
-messages = [{"role": "user", "content": input_content}]
-input_text=tokenizer.apply_chat_template(messages, tokenize=False)
+prompt = "你是一个文本纠错专家，纠正输入句子中的语法错误，并输出正确的句子，输入句子为："
+text_input = "少先队员因该为老人让坐。"
+messages = [
+    {"role": "user", "content": prompt + text_input}
+]
+text = tokenizer.apply_chat_template(
+    messages,
+    tokenize=False,
+    add_generation_prompt=True
+)
+model_inputs = tokenizer([text], return_tensors="pt").to(model.device)
 
-print(input_text)
+generated_ids = model.generate(
+    **model_inputs,
+    max_new_tokens=512
+)
+generated_ids = [
+    output_ids[len(input_ids):] for input_ids, output_ids in zip(model_inputs.input_ids, generated_ids)
+]
 
-inputs = tokenizer.encode(input_text, return_tensors="pt").to(device)
-outputs = model.generate(inputs, max_new_tokens=1024, temperature=0, do_sample=False, repetition_penalty=1)
-
-print(tokenizer.decode(outputs[0]))
+response = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
+print(response)
 
 ```
 
@@ -136,9 +152,53 @@ for output in outputs:
 
 ### VLLM 异步推理
 ```shell
+pip install -r requirements.txt
 cd ChineseErrorCorrector
 
 python main.py
+```
+
+### model 
+
+```shell
+pip install modelscope
+```
+
+```shell
+from modelscope import AutoModelForCausalLM, AutoTokenizer
+
+model_name = "tiannlp/ChineseErrorCorrector2-7B"
+
+model = AutoModelForCausalLM.from_pretrained(
+    model_name,
+    torch_dtype="auto",
+    device_map="auto"
+)
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+prompt = "你是一个文本纠错专家，纠正输入句子中的语法错误，并输出正确的句子，输入句子为："
+text_input = "少先队员因该为老人让坐。"
+messages = [
+    {"role": "user", "content": prompt + text_input}
+]
+text = tokenizer.apply_chat_template(
+    messages,
+    tokenize=False,
+    add_generation_prompt=True
+)
+model_inputs = tokenizer([text], return_tensors="pt").to(model.device)
+
+generated_ids = model.generate(
+    **model_inputs,
+    max_new_tokens=512
+)
+generated_ids = [
+    output_ids[len(input_ids):] for input_ids, output_ids in zip(model_inputs.input_ids, generated_ids)
+]
+
+response = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
+print(response)
+
 ```
 
 ## Citation
