@@ -57,7 +57,7 @@
 
 | Model Name       | Model Link                                                                                                              |    Prec     | Rec | F0.5 |
 |:-----------------|:---------------------------------------------------------------|:-----------|:------------|:-------|
-|  twnlp/ChineseErrorCorrector2-7B | [huggingface](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B) [modelspose(国内下载)](https://www.modelscope.cn/models/tiannlp/ChineseErrorCorrector2-7B)       |  0.6233     | 0.6228      | 0.6232 |
+|  twnlp/ChineseErrorCorrector2-7B | [huggingface](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B) ； [modelspose(国内下载)](https://www.modelscope.cn/models/tiannlp/ChineseErrorCorrector2-7B)       |  0.6233     | 0.6228      | 0.6232 |
 |  twnlp/ChineseErrorCorrector2-7B-AWQ | [huggingface](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B-AWQ)       |  0.514     | 0.5671      | 0.5238 |
 |  HW_TSC_nlpcc2023_cgec(华为) |   未开源     |  0.5095     | 0.3129      | 0.4526 |
 | 鱼饼啾啾Plus(北京大学) |   未开源     |  0.5708     | 0.1294      | 0.3394 |
