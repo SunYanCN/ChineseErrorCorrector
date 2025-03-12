@@ -17,7 +17,7 @@
 支持中文拼写和语法错误纠正，并开源拼写和语法错误的增强工具，荣获2024CCL 冠军 🏆，[查看论文](https://aclanthology.org/2024.ccl-3.31/) 。
 
 ## 🔥🔥🔥 新闻
-[2025/03/12] 为了方便使用，基于AWQ对[twnlp/ChineseErrorCorrector2-7B](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B)进行量化，发布 [twnlp/ChineseErrorCorrector2-7B-AWQ](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B-AWQ)，在单张T4(16G)显卡上即可运行😄, [运行实例]
+[2025/03/12] 为了方便使用，基于AWQ对[twnlp/ChineseErrorCorrector2-7B](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B)进行量化，发布 [twnlp/ChineseErrorCorrector2-7B-AWQ](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B-AWQ)，在单张T4(16G)显卡上即可运行😄, [运行实例](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B-AWQ#usage-huggingface-transformers)
 
 [2025/03/10] 模型支持多种推理方式，包括 transformers、VLLM、modelscope。
 
