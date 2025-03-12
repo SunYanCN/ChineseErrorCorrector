@@ -17,6 +17,7 @@
 支持中文拼写和语法错误纠正，并开源拼写和语法错误的增强工具，荣获2024CCL 冠军 🏆，[查看论文](https://aclanthology.org/2024.ccl-3.31/) 。
 
 ## 🔥🔥🔥 新闻
+[2025/03/12] 为了方便使用，基于AWQ对[twnlp/ChineseErrorCorrector2-7B](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B)进行量化，发布 [twnlp/ChineseErrorCorrector2-7B-AWQ](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B-AWQ)，在单张T4(16G)显卡上即可运行😄, [运行实例]
 
 [2025/03/10] 模型支持多种推理方式，包括 transformers、VLLM、modelscope。
 
@@ -44,9 +45,9 @@
 
 | Model Name       | Model Link                                                                                                              | Base Model                 | Avg        | SIGHAN-2015(通用) | EC-LAW(法律)| EC-MED(医疗)| EC-ODW(公文)|
 |:-----------------|:------------------------------------------------------------------------------------------------------------------------|:---------------------------|:-----------|:------------|:-------|:-------|:--------|
-| twnlp/ChineseErrorCorrector-1.5B        | https://huggingface.co/twnlp/ChineseErrorCorrector-1.5B/tree/main                                    | Qwen/Qwen2.5-1.5B-Instruct | 0.459     | 0.346      | 0.517 | 0.433 | 0.540     |
-| twnlp/ChineseErrorCorrector-7B        | https://huggingface.co/twnlp/ChineseErrorCorrector-7B/tree/main                                    | Qwen/Qwen2.5-7B-Instruct | 0.712     | 0.592      | 0.787 | 0.677 | 0.793     |
-| twnlp/ChineseErrorCorrector-32B-LORA        | https://huggingface.co/twnlp/ChineseErrorCorrector-32B-LORA/tree/main                                    | Qwen/Qwen2.5-32B-Instruct |  0.757   |    0.594   | 0.776 |0.794 |   0.864  |
+| twnlp/ChineseErrorCorrector-1.5B        | [huggingface](https://huggingface.co/twnlp/ChineseErrorCorrector-1.5B/tree/main)                               | Qwen/Qwen2.5-1.5B-Instruct | 0.459     | 0.346      | 0.517 | 0.433 | 0.540     |
+| twnlp/ChineseErrorCorrector-7B        | [huggingface](https://huggingface.co/twnlp/ChineseErrorCorrector-7B/tree/main)                                    | Qwen/Qwen2.5-7B-Instruct | 0.712     | 0.592      | 0.787 | 0.677 | 0.793     |
+| twnlp/ChineseErrorCorrector-32B-LORA        | [huggingface](https://huggingface.co/twnlp/ChineseErrorCorrector-32B-LORA/tree/main)                                    | Qwen/Qwen2.5-32B-Instruct |  0.757   |    0.594   | 0.776 |0.794 |   0.864  |
 
 ## 文本纠错评测（拼写错误+语法错误）
 - 评估工具：ChERRANT  [评测工具](https://github.com/HillZhang1999/MuCGEC)
@@ -56,11 +57,12 @@
 
 | Model Name       | Model Link                                                                                                              |    Prec     | Rec | F0.5 |
 |:-----------------|:---------------------------------------------------------------|:-----------|:------------|:-------|
-|  twnlp/ChineseErrorCorrector2-7B | https://huggingface.co/twnlp/ChineseErrorCorrector2-7B       |  0.6233     | 0.6228      | 0.6232 |
+|  twnlp/ChineseErrorCorrector2-7B | [huggingface](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B) [modelspose(国内下载)](https://www.modelscope.cn/models/tiannlp/ChineseErrorCorrector2-7B)       |  0.6233     | 0.6228      | 0.6232 |
+|  twnlp/ChineseErrorCorrector2-7B-AWQ | [huggingface](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B-AWQ)       |  0.514     | 0.5671      | 0.5238 |
 |  HW_TSC_nlpcc2023_cgec(华为) |   未开源     |  0.5095     | 0.3129      | 0.4526 |
-| 鱼饼啾啾Plus |   未开源     |  0.5708     | 0.1294      | 0.3394 |
-| CUHK_SU |  未开源      |  0.3882     | 0.1558      | 0.2990 |
-| CGEC++ |    未开源    |  0.2414     | 0.0735      | 0.1657 |
+| 鱼饼啾啾Plus(北京大学) |   未开源     |  0.5708     | 0.1294      | 0.3394 |
+| CUHK_SU(香港中文大学) |  未开源      |  0.3882     | 0.1558      | 0.2990 |
+| CGEC++(东南大学) |    未开源    |  0.2414     | 0.0735      | 0.1657 |
 | zhao_jia |   未开源     |  0.1719     | 0.1478      | 0.1665 |
 
 
