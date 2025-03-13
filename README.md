@@ -153,11 +153,15 @@ for output in outputs:
 ```
 
 
-### VLLM 异步推理
+### VLLM 异步推理 (Our)
 ```shell
 pip install -r requirements.txt
 cd ChineseErrorCorrector
 
+# 修改config.py
+#根据不同的模型，修改Qwen2TextCorConfig的DEFAULT_CKPT_PATH，默认为ChineseErrorCorrector2-7B
+
+#批量预测
 python main.py
 ```
 

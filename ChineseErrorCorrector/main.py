@@ -25,7 +25,8 @@ if __name__ == '__main__':
 
     # 测试用例
     input_text = [
-        "少先队员因该为老人让坐。"
+        "少先队员因该为老人让坐。",
+        "大约半个小时左右"
     ]
     loop = asyncio.get_event_loop()
     result = loop.run_until_complete(ec.text_infer(input_text))
