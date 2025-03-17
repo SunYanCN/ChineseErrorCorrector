@@ -11,6 +11,9 @@ import copy
 from ChineseErrorCorrector.utils import torch_gc
 
 
+
+
+
 class VLLMTextCorrectInfer(object):
 
     def __init__(self, ):
@@ -104,7 +107,6 @@ class VLLMTextCorrectInfer(object):
 
     async def infer_sentence(self, user_inputs):
         result = [await self.generate(query_i) for query_i in user_inputs]
-
         return result
 
     async def parse_request(self, req_json):
