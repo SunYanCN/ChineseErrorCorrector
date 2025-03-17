@@ -153,17 +153,39 @@ for output in outputs:
 ```
 
 
-### VLLM 异步推理 (Our)
+### VLLM 异步批量推理 
 ```shell
 pip install -r requirements.txt
 cd ChineseErrorCorrector
 
 # 修改config.py
-#根据不同的模型，修改Qwen2TextCorConfig的DEFAULT_CKPT_PATH，默认为ChineseErrorCorrector2-7B
+#（1）根据不同的模型，修改的DEFAULT_CKPT_PATH，默认为ChineseErrorCorrector2-7B
+#（2）将Qwen2TextCorConfig的USE_VLLM = True
 
 #批量预测
 python main.py
 ```
+
+
+### Transformers 批量推理 
+```shell
+pip install -r requirements.txt
+cd ChineseErrorCorrector
+
+# 修改config.py
+#（1）根据不同的模型，修改的DEFAULT_CKPT_PATH，默认为ChineseErrorCorrector2-7B
+#（2）将Qwen2TextCorConfig的USE_VLLM = False
+
+#批量预测
+python main.py
+
+#输出：
+'''
+[{'source': '少先队员因该为老人让坐。', 'target': '少先队员应该为老人让座。', 'errors': [('因', '应', 4), ('坐', '座', 10)]}, {'source': '大约半个小时左右', 'target': '大约半个小时', 'errors': [('左右', '', 6)]}]
+'''
+
+```
+
 
 ### modelscope 
 
