@@ -76,7 +76,8 @@ pip install transformers
 ```
 
 ```shell
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoModelForCausalLM, AutoTokenizer,set_seed
+set_seed(42)
 
 model_name = "twnlp/ChineseErrorCorrector2-7B"
 
