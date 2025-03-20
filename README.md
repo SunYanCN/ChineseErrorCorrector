@@ -154,12 +154,26 @@ for output in outputs:
 
 
 ### VLLM 异步批量推理 
-```shell
+- Clone the repo
+``` sh
+git clone https://github.com/TW-NLP/ChineseErrorCorrector
+cd Spark-TTS
+```
+- Install Conda: please see https://docs.conda.io/en/latest/miniconda.html
+- Create Conda env:
+``` sh
+conda create -n zh_correct -y python=3.8
+conda activate zh_correct
 pip install -r requirements.txt
-cd ChineseErrorCorrector
+# If you are in mainland China, you can set the mirror as follows:
+pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/ --trusted-host=mirrors.aliyun.com
+```
 
+
+```sh
+cd ChineseErrorCorrector
 # 修改config.py
-#（1）根据不同的模型，修改的DEFAULT_CKPT_PATH，默认为ChineseErrorCorrector2-7B
+#（1）根据不同的模型，修改的DEFAULT_CKPT_PATH，默认为ChineseErrorCorrector2-7B(将模型下载，放在ChineseErrorCorrector/pre_model/ChineseErrorCorrector2-7B)
 #（2）将Qwen2TextCorConfig的USE_VLLM = True
 
 #批量预测
@@ -168,10 +182,23 @@ python main.py
 
 
 ### Transformers 批量推理 
-```shell
+- Clone the repo
+``` sh
+git clone https://github.com/TW-NLP/ChineseErrorCorrector
+cd Spark-TTS
+```
+- Install Conda: please see https://docs.conda.io/en/latest/miniconda.html
+- Create Conda env:
+``` sh
+conda create -n zh_correct -y python=3.8
+conda activate zh_correct
 pip install -r requirements.txt
-cd ChineseErrorCorrector
+# If you are in mainland China, you can set the mirror as follows:
+pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/ --trusted-host=mirrors.aliyun.com
+```
 
+``` sh
+cd ChineseErrorCorrector
 # 修改config.py
 #（1）根据不同的模型，修改的DEFAULT_CKPT_PATH，默认为ChineseErrorCorrector2-7B
 #（2）将Qwen2TextCorConfig的USE_VLLM = False
