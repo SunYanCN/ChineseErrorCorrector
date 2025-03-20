@@ -157,7 +157,7 @@ for output in outputs:
 - Clone the repo
 ``` sh
 git clone https://github.com/TW-NLP/ChineseErrorCorrector
-cd Spark-TTS
+cd ChineseErrorCorrector
 ```
 - Install Conda: please see https://docs.conda.io/en/latest/miniconda.html
 - Create Conda env:
@@ -171,7 +171,6 @@ pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/ --tru
 
 
 ```sh
-cd ChineseErrorCorrector
 # 修改config.py
 #（1）根据不同的模型，修改的DEFAULT_CKPT_PATH，默认为ChineseErrorCorrector2-7B(将模型下载，放在ChineseErrorCorrector/pre_model/ChineseErrorCorrector2-7B)
 #（2）将Qwen2TextCorConfig的USE_VLLM = True
@@ -185,7 +184,7 @@ python main.py
 - Clone the repo
 ``` sh
 git clone https://github.com/TW-NLP/ChineseErrorCorrector
-cd Spark-TTS
+cd ChineseErrorCorrector
 ```
 - Install Conda: please see https://docs.conda.io/en/latest/miniconda.html
 - Create Conda env:
@@ -198,7 +197,6 @@ pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/ --tru
 ```
 
 ``` sh
-cd ChineseErrorCorrector
 # 修改config.py
 #（1）根据不同的模型，修改的DEFAULT_CKPT_PATH，默认为ChineseErrorCorrector2-7B
 #（2）将Qwen2TextCorConfig的USE_VLLM = False
