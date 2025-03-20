@@ -19,7 +19,7 @@
 ## 🔥🔥🔥 新闻
 [2025/03/17] 更新批量错误文本的解析，[transformers批量解析](https://github.com/TW-NLP/ChineseErrorCorrector?tab=readme-ov-file#transformers-%E6%89%B9%E9%87%8F%E6%8E%A8%E7%90%86) ;[VLLM批量解析](https://github.com/TW-NLP/ChineseErrorCorrector?tab=readme-ov-file#vllm-%E5%BC%82%E6%AD%A5%E6%89%B9%E9%87%8F%E6%8E%A8%E7%90%86)
 
-[2025/03/12] 为了方便使用，基于AWQ对[twnlp/ChineseErrorCorrector2-7B](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B)进行量化，发布 [twnlp/ChineseErrorCorrector2-7B-AWQ](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B-AWQ)，在单张T4(16G)显卡上即可运行😄，transformers推理占用6G显存, [运行实例](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B-AWQ#usage-huggingface-transformers)
+[2025/03/12] 为了方便使用，基于AWQ对[twnlp/ChineseErrorCorrector2-7B](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B)进行量化，发布 [twnlp/ChineseErrorCorrector2-7B-AWQ](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B-AWQ)，在单张T4(16G)显卡上即可运行😄，transformers推理占用6G显存， [运行实例](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B-AWQ#usage-huggingface-transformers)
 
 [2025/03/10] 模型支持多种推理方式，包括 transformers、VLLM、modelscope。
 
