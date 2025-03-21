@@ -36,8 +36,8 @@
 |:--------------|:--------------------------------------------------------------------------------------------------------------------------|:------------|
 | [twnlp/ChineseErrorCorrector2-7B](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B) |语法纠错+拼写纠错 | 使用200万纠错数据进行多轮迭代训练，效果好，推荐使用。|
 | [twnlp/ChineseErrorCorrector2-7B-AWQ](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B-AWQ) |语法纠错+拼写纠错 | 基于AWQ对ChineseErrorCorrector2-7B进行量化，适用于显存低的机器运行。|
-| [twnlp/ChineseErrorCorrector-7B](https://huggingface.co/twnlp/ChineseErrorCorrector-7B)|拼写纠错 | 使用38万开源拼写数据，基于Qwen2.5训练中文拼写纠错模型，支持语似、形似等拼写错误纠正，拼写纠错效果好。|
-| [twnlp/ChineseErrorCorrector-1.5B](https://huggingface.co/twnlp/ChineseErrorCorrector-1.5B)|拼写纠错 | 使用38万开源拼写数据，基于Qwen2.5训练中文拼写纠错模型，支持语似、形似等拼写错误纠正，拼写纠错效果一般。|
+| [twnlp/ChineseErrorCorrector-7B](https://huggingface.co/twnlp/ChineseErrorCorrector-7B)|拼写纠错 | 使用38万开源拼写数据，支持语似、形似等拼写错误纠正，拼写纠错效果好。|
+| [twnlp/ChineseErrorCorrector-1.5B](https://huggingface.co/twnlp/ChineseErrorCorrector-1.5B)|拼写纠错 | 使用38万开源拼写数据，支持语似、形似等拼写错误纠正，拼写纠错效果一般。|
 
 
 
