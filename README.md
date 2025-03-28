@@ -293,9 +293,7 @@ pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/ --tru
 
 ### 一键训练
 ``` sh
-cd llm/train
-
-bash run.sh
+bash llm/train/run.sh
 ``` 
 
 ## Citation

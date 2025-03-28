@@ -1,18 +1,22 @@
 #!/bin/bash
 
+# 获取ChineseErrorCorrector的绝对路径
+BASE_PATH=$(dirname "$(realpath "$0")")/..
+
+
 # 业务领域训练数据
-TRAIN_FILE="../data/business_data/train.json"
+TRAIN_FILE="${BASE_PATH}/data/business_data/train.json"
 # 业务领域测试数据
-DEV_FILE="../data/business_data/dev.json"
-# 训练模型
-MODEL_NAME="../pre_model/ChineseErrorCorrector2-7B"
+DEV_FILE="${BASE_PATH}/data/business_data/dev.json"
+# 训练模型路径
+MODEL_NAME="${BASE_PATH}/pre_model/ChineseErrorCorrector2-7B"
 # LoRA 训练的存储目录
-OUTPUT_DIR="../data/business_data/model_output"
+OUTPUT_DIR="${BASE_PATH}/data/business_data/model_output"
 # 数据 cache 目录
-CACHE_DIR="../data/business_data/cache_dir"
+CACHE_DIR="${BASE_PATH}/data/business_data/cache_dir"
 
 # 运行训练脚本
-python run.py \
+python ${BASE_PATH}/llm/train/run.py \
     --train_file $TRAIN_FILE \
     --dev_file $DEV_FILE \
     --model_type auto \
