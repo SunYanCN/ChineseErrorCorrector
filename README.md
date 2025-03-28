@@ -17,7 +17,7 @@
 支持中文拼写和语法错误纠正，并开源拼写和语法错误的增强工具，荣获2024CCL 冠军 🏆，[查看论文](https://aclanthology.org/2024.ccl-3.31/) ，如有帮助，感谢star✨。
 
 ## 🔥🔥🔥 新闻
-[2025/03/28] 新增大模型训练代码，不同领域可以训练自己的文本纠错大模型，大幅度提高自己的领域的纠错水平。
+[2025/03/28] 新增大模型训练代码，不同领域可以训练自己的文本纠错大模型，大幅度提高自己的领域的纠错水平，[训练教程](https://github.com/TW-NLP/ChineseErrorCorrector?tab=readme-ov-file#%E8%AE%AD%E7%BB%83) 。
 
 [2025/03/17] 更新批量错误文本的解析，[transformers批量解析](https://github.com/TW-NLP/ChineseErrorCorrector?tab=readme-ov-file#transformers-%E6%89%B9%E9%87%8F%E6%8E%A8%E7%90%86) ;[VLLM批量解析](https://github.com/TW-NLP/ChineseErrorCorrector?tab=readme-ov-file#vllm-%E5%BC%82%E6%AD%A5%E6%89%B9%E9%87%8F%E6%8E%A8%E7%90%86)
 
@@ -63,7 +63,7 @@
 | twnlp/ChineseErrorCorrector-7B        | [huggingface](https://huggingface.co/twnlp/ChineseErrorCorrector-7B/tree/main)                                    | Qwen/Qwen2.5-7B-Instruct | 0.712     | 0.592      | 0.787 | 0.677 | 0.793     |
 | twnlp/ChineseErrorCorrector-32B-LORA        | [huggingface](https://huggingface.co/twnlp/ChineseErrorCorrector-32B-LORA/tree/main)                                    | Qwen/Qwen2.5-32B-Instruct |  0.757   |    0.594   | 0.776 |0.794 |   0.864  |
 
-## 文本纠错评测
+## 文本纠错评测(双冠军 🏆)
 ### NaCGEC 数据集
 - 评估工具：ChERRANT  [评测工具](https://github.com/HillZhang1999/MuCGEC)
 - 评估数据：[NaCGEC](https://github.com/masr2000/NaCGEC)
@@ -293,7 +293,7 @@ pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/ --tru
 
 ### 一键训练
 ``` sh
-bash llm/train/run.sh
+bash ./llm/train/run.sh
 ``` 
 
 ## Citation
