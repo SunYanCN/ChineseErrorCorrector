@@ -63,12 +63,13 @@
 | twnlp/ChineseErrorCorrector-7B        | [huggingface](https://huggingface.co/twnlp/ChineseErrorCorrector-7B/tree/main)                                    | Qwen/Qwen2.5-7B-Instruct | 0.712     | 0.592      | 0.787 | 0.677 | 0.793     |
 | twnlp/ChineseErrorCorrector-32B-LORA        | [huggingface](https://huggingface.co/twnlp/ChineseErrorCorrector-32B-LORA/tree/main)                                    | Qwen/Qwen2.5-32B-Instruct |  0.757   |    0.594   | 0.776 |0.794 |   0.864  |
 
-## 文本纠错评测（拼写错误+语法错误）
+## 文本纠错评测
+### NaCGEC 数据集
 - 评估工具：ChERRANT  [评测工具](https://github.com/HillZhang1999/MuCGEC)
 - 评估数据：[NaCGEC](https://github.com/masr2000/NaCGEC)
 - 评估指标：F1-0.5
 
-
+🏆
 | Model Name       | Model Link                                                                                                              |    Prec     | Rec | F0.5 |
 |:-----------------|:---------------------------------------------------------------|:-----------|:------------|:-------|
 |  twnlp/ChineseErrorCorrector2-7B | [huggingface](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B) ； [modelspose(国内下载)](https://www.modelscope.cn/models/tiannlp/ChineseErrorCorrector2-7B)       |  0.6233     | 0.6228      | 0.6232 |
@@ -76,6 +77,11 @@
 |  HW_TSC_nlpcc2023_cgec(华为) |   未开源     |  0.5095     | 0.3129      | 0.4526 |
 | 鱼饼啾啾Plus(北京大学) |   未开源     |  0.5708     | 0.1294      | 0.3394 |
 | CUHK_SU(香港中文大学) |  未开源      |  0.3882     | 0.1558      | 0.2990 |
+
+### FCGEC 数据集
+- 评估指标：binary_f1
+
+[评测🏆](https://codalab.lisn.upsaclay.fr/competitions/8020#results)
 
 ## 使用
 ### 🤗 transformers 
