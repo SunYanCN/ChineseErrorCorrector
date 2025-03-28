@@ -46,7 +46,7 @@ pypi:https://pypi.org/project/ChineseErrorCorrector/
 
 
 ```python
-from ChineseErrorCorrector.dat import GrammarErrorDat
+from ChineseErrorCorrector.utils.dat import GrammarErrorDat
 
 cged_tool = GrammarErrorDat()
 print(cged_tool.lack_word("小明住在北京"))
@@ -58,7 +58,7 @@ print(cged_tool.lack_word("小明住在北京"))
 
 
 ```python
-from ChineseErrorCorrector.dat import GrammarErrorDat
+from ChineseErrorCorrector.utils.dat import GrammarErrorDat
 
 cged_tool = GrammarErrorDat()
 print(cged_tool.wrong_word("小明住在北京"))
@@ -69,7 +69,7 @@ print(cged_tool.wrong_word("小明住在北京"))
 
 
 ```python
-from ChineseErrorCorrector.dat import GrammarErrorDat
+from ChineseErrorCorrector.utils.dat import GrammarErrorDat
 
 cged_tool = GrammarErrorDat()
 print(cged_tool.lack_char("小明住在北京，热爱NLP。"))
@@ -80,7 +80,7 @@ print(cged_tool.lack_char("小明住在北京，热爱NLP。"))
 
 
 ```python
-from ChineseErrorCorrector.dat import GrammarErrorDat
+from ChineseErrorCorrector.utils.dat import GrammarErrorDat
 
 cged_tool = GrammarErrorDat()
 print(cged_tool.wrong_char("小明住在北京，热爱NLP。"))
@@ -91,7 +91,7 @@ print(cged_tool.wrong_char("小明住在北京，热爱NLP。"))
 
 
 ```python
-from ChineseErrorCorrector.dat import GrammarErrorDat
+from ChineseErrorCorrector.utils.dat import GrammarErrorDat
 
 cged_tool = GrammarErrorDat()
 print(cged_tool.unknow_sub("小明住在北京"))
@@ -102,7 +102,7 @@ print(cged_tool.unknow_sub("小明住在北京"))
 
 
 ```python
-from ChineseErrorCorrector.dat import GrammarErrorDat
+from ChineseErrorCorrector.utils.dat import GrammarErrorDat
 
 cged_tool = GrammarErrorDat()
 print(cged_tool.unknow_pred("小明住在北京"))
@@ -112,7 +112,7 @@ print(cged_tool.unknow_pred("小明住在北京"))
 
 
 ```python
-from ChineseErrorCorrector.dat import GrammarErrorDat
+from ChineseErrorCorrector.utils.dat import GrammarErrorDat
 
 cged_tool = GrammarErrorDat()
 print(cged_tool.lack_obj("小明住在北京，热爱NLP。"))
@@ -122,7 +122,7 @@ print(cged_tool.lack_obj("小明住在北京，热爱NLP。"))
 
 
 ```python
-from ChineseErrorCorrector.dat import GrammarErrorDat
+from ChineseErrorCorrector.utils.dat import GrammarErrorDat
 
 cged_tool = GrammarErrorDat()
 print(cged_tool.lack_others("小明住在北京，热爱NLP。"))
@@ -131,7 +131,7 @@ print(cged_tool.lack_others("小明住在北京，热爱NLP。"))
 ### 9.虚词多余
 
 ```python
-from ChineseErrorCorrector.dat import GrammarErrorDat
+from ChineseErrorCorrector.utils.dat import GrammarErrorDat
 
 cged_tool = GrammarErrorDat()
 print(cged_tool.red_fun("小明住在北京，热爱NLP。"))
@@ -141,7 +141,7 @@ print(cged_tool.red_fun("小明住在北京，热爱NLP。"))
 
 
 ```python
-from ChineseErrorCorrector.dat import GrammarErrorDat
+from ChineseErrorCorrector.utils.dat import GrammarErrorDat
 
 cged_tool = GrammarErrorDat()
 print(cged_tool.red_component("小明住在北京，热爱NLP。"))
@@ -151,7 +151,7 @@ print(cged_tool.red_component("小明住在北京，热爱NLP。"))
 
 
 ```python
-from ChineseErrorCorrector.dat import GrammarErrorDat
+from ChineseErrorCorrector.utils.dat import GrammarErrorDat
 
 cged_tool = GrammarErrorDat()
 print(cged_tool.red_sub("小明住在北京，热爱NLP。"))
@@ -163,7 +163,7 @@ print(cged_tool.red_sub("小明住在北京，热爱NLP。"))
 
 
 ```python
-from ChineseErrorCorrector.dat import GrammarErrorDat
+from ChineseErrorCorrector.utils.dat import GrammarErrorDat
 
 cged_tool = GrammarErrorDat()
 print(cged_tool.wrong_sentence_order("小明住在北京，热爱NLP。"))
@@ -178,7 +178,7 @@ print(cged_tool.wrong_sentence_order("小明住在北京，热爱NLP。"))
 
 
 ```python
-from ChineseErrorCorrector.dat import GrammarErrorDat
+from ChineseErrorCorrector.utils.dat import GrammarErrorDat
 
 cged_tool = GrammarErrorDat()
 print(cged_tool.wrong_ver_obj("小明住在北京，热爱NLP。"))
@@ -191,7 +191,7 @@ print(cged_tool.wrong_ver_obj("小明住在北京，热爱NLP。"))
 
 
 ```python
-from ChineseErrorCorrector.dat import GrammarErrorDat
+from ChineseErrorCorrector.utils.dat import GrammarErrorDat
 
 cged_tool = GrammarErrorDat()
 print(cged_tool.other_wrong("小明住在北京，热爱NLP。"))

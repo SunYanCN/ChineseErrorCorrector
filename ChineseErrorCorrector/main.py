@@ -2,12 +2,11 @@ import os
 import sys
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
+from ChineseErrorCorrector.llm.infer.hf_infer import HFTextCorrectInfer
+from ChineseErrorCorrector.llm.infer.vllm_infer import VLLMTextCorrectInfer
+from ChineseErrorCorrector.utils.correct_tools import res_format
 import asyncio
-from ChineseErrorCorrector.llm.hf_infer import HFTextCorrectInfer
-from ChineseErrorCorrector.llm.vllm_infer import VLLMTextCorrectInfer
 from ChineseErrorCorrector.config import Qwen2TextCorConfig
-from ChineseErrorCorrector.utils import res_format
 
 
 class ErrorCorrect(object):

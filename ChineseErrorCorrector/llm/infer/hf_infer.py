@@ -8,7 +8,7 @@ from transformers import AutoTokenizer, StoppingCriteria, StoppingCriteriaList, 
 class HFTextCorrectInfer(object):
 
     def __init__(self, ):
-        set_seed(42)
+        set_seed(1000)
         self.prompt_prefix = "你是一个文本纠错专家，纠正输入句子中的语法错误，并输出正确的句子，输入句子为："
         if DEVICE == 'cpu':
             self.model = AutoModelForCausalLM.from_pretrained(
