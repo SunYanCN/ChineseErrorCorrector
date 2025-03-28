@@ -267,20 +267,6 @@ print(response)
 
 ```
 
-## Citation
-
-If this work is helpful, please kindly cite as:
-
-```bibtex
-
-@inproceedings{wei2024中小学作文语法错误检测,
-  title={中小学作文语法错误检测, 病句改写与流畅性评级的自动化方法研究},
-  author={Wei, Tian},
-  booktitle={Proceedings of the 23rd Chinese National Conference on Computational Linguistics (Volume 3: Evaluations)},
-  pages={278--284},
-  year={2024}
-}
-```
 
 ## 训练
 ### 环境准备
@@ -306,7 +292,20 @@ cd llm/train
 bash run.sh
 ``` 
 
+## Citation
 
+If this work is helpful, please kindly cite as:
+
+```bibtex
+
+@inproceedings{wei2024中小学作文语法错误检测,
+  title={中小学作文语法错误检测, 病句改写与流畅性评级的自动化方法研究},
+  author={Wei, Tian},
+  booktitle={Proceedings of the 23rd Chinese National Conference on Computational Linguistics (Volume 3: Evaluations)},
+  pages={278--284},
+  year={2024}
+}
+```
 ## Star History
 
 ![Star History Chart](https://api.star-history.com/svg?repos=TW-NLP/ChineseErrorCorrector&type=Date)
