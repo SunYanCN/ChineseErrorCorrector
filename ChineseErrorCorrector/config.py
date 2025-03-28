@@ -25,7 +25,7 @@ class Qwen2TextCorConfig(object):
     MAX_LENGTH = 32000
     # DEFAULT_CKPT_PATH = os.path.join(MODEL_DIR, 'ChineseErrorCorrector2-7B')
     # DEFAULT_CKPT_PATH="/home/tianwei/TW_NLP/ChineseErrorCorrector/data/business_data/model_output"
-    DEFAULT_CKPT_PATH = os.path.join(MODEL_DIR, '7b_merge_step2')
+    DEFAULT_CKPT_PATH = os.path.join(MODEL_DIR, 'ChineseErrorCorrector2-7B-base')
     GPU_MEMARY = 0.9
 
 
@@ -33,7 +33,7 @@ class TrainConfig(object):
     """
     模型数据与模型保存
     """
-    TRAIN_PATH = os.path.join(DATA_DIR, 'business_data', 'valid.json')
+    TRAIN_PATH = os.path.join(DATA_DIR, 'business_data', 'train.json')
     DEV_PATH = os.path.join(DATA_DIR, 'business_data', 'valid.json')
     SAVE_PATH = os.path.join(DATA_DIR, 'business_data', 'model_output')
     CACHE_PATH = os.path.join(DATA_DIR, 'cache')
