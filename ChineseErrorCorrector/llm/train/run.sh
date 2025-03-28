@@ -1,10 +1,14 @@
 #!/bin/bash
 
-# 设置默认参数
+# 业务领域训练数据
 TRAIN_FILE="../data/business_data/train.json"
+# 业务领域测试数据
 DEV_FILE="../data/business_data/dev.json"
+# 训练模型
 MODEL_NAME="../pre_model/ChineseErrorCorrector2-7B"
+# LoRA 训练的存储目录
 OUTPUT_DIR="../data/business_data/model_output"
+# 数据 cache 目录
 CACHE_DIR="../data/business_data/cache_dir"
 
 # 运行训练脚本
