@@ -17,6 +17,8 @@
 支持中文拼写和语法错误纠正，并开源拼写和语法错误的增强工具，荣获2024CCL 冠军 🏆，[查看论文](https://aclanthology.org/2024.ccl-3.31/) ，如有帮助，感谢star✨。
 
 ## 🔥🔥🔥 新闻
+[2025/03/28] 新增大模型训练代码，不同领域可以训练自己的文本纠错大模型，大幅度提高自己的领域的纠错水平。
+
 [2025/03/17] 更新批量错误文本的解析，[transformers批量解析](https://github.com/TW-NLP/ChineseErrorCorrector?tab=readme-ov-file#transformers-%E6%89%B9%E9%87%8F%E6%8E%A8%E7%90%86) ;[VLLM批量解析](https://github.com/TW-NLP/ChineseErrorCorrector?tab=readme-ov-file#vllm-%E5%BC%82%E6%AD%A5%E6%89%B9%E9%87%8F%E6%8E%A8%E7%90%86)
 
 [2025/03/12] 为了方便使用，基于AWQ对[twnlp/ChineseErrorCorrector2-7B](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B)进行量化，发布 [twnlp/ChineseErrorCorrector2-7B-AWQ](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B-AWQ)，在单张T4(16G)显卡上即可运行😄，transformers推理占用6G显存， [运行实例](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B-AWQ#usage-huggingface-transformers)
@@ -172,7 +174,7 @@ cd ChineseErrorCorrector
 - Install Conda: please see https://docs.conda.io/en/latest/miniconda.html
 - Create Conda env:
 ``` sh
-conda create -n zh_correct -y python=3.8
+conda create -n zh_correct -y python=3.9
 conda activate zh_correct
 pip install -r requirements.txt
 # If you are in mainland China, you can set the mirror as follows:
@@ -199,7 +201,7 @@ cd ChineseErrorCorrector
 - Install Conda: please see https://docs.conda.io/en/latest/miniconda.html
 - Create Conda env:
 ``` sh
-conda create -n zh_correct -y python=3.8
+conda create -n zh_correct -y python=3.9
 conda activate zh_correct
 pip install -r requirements.txt
 # If you are in mainland China, you can set the mirror as follows:
@@ -279,6 +281,30 @@ If this work is helpful, please kindly cite as:
   year={2024}
 }
 ```
+
+## 训练
+### 环境准备
+- Clone the repo
+``` sh
+git clone https://github.com/TW-NLP/ChineseErrorCorrector
+cd ChineseErrorCorrector
+```
+- Install Conda: please see https://docs.conda.io/en/latest/miniconda.html
+- Create Conda env:
+``` sh
+conda create -n zh_correct -y python=3.9
+conda activate zh_correct
+pip install -r requirements.txt
+# If you are in mainland China, you can set the mirror as follows:
+pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/ --trusted-host=mirrors.aliyun.com
+```
+
+### 一键训练
+``` sh
+cd llm/train
+
+bash run.sh
+``` 
 
 
 ## Star History
