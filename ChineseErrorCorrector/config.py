@@ -23,9 +23,7 @@ class Qwen2TextCorConfig(object):
     # 是否采用VLLM进行异步推理，工程化推荐
     USE_VLLM = False
     MAX_LENGTH = 32000
-    # DEFAULT_CKPT_PATH = os.path.join(MODEL_DIR, 'ChineseErrorCorrector2-7B')
-    # DEFAULT_CKPT_PATH="/home/tianwei/TW_NLP/ChineseErrorCorrector/data/business_data/model_output"
-    DEFAULT_CKPT_PATH = os.path.join(MODEL_DIR, 'ChineseErrorCorrector2-7B-base')
+    DEFAULT_CKPT_PATH = os.path.join(MODEL_DIR, 'ChineseErrorCorrector2-7B')
     GPU_MEMARY = 0.9
 
 
