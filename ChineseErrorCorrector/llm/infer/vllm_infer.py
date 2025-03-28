@@ -8,9 +8,7 @@ from vllm import SamplingParams, AsyncLLMEngine, AsyncEngineArgs
 import time
 import copy
 
-from ChineseErrorCorrector.utils import torch_gc
-
-
+from ChineseErrorCorrector.utils.correct_tools import torch_gc
 
 
 

@@ -1,7 +1,7 @@
 import os
 import torch
 
-os.environ['CUDA_VISIBLE_DEVICES'] = "1"
+os.environ['CUDA_VISIBLE_DEVICES'] = "1,2"
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 MODEL_DIR = os.path.join(PROJECT_DIR, 'pre_model')
@@ -17,8 +17,23 @@ class LTPPath(object):
 
 # 需要将ChineseErrorCorrector2-7B下载下来，放在pre_model中
 class Qwen2TextCorConfig(object):
+    """
+    模型位置
+    """
     # 是否采用VLLM进行异步推理，工程化推荐
     USE_VLLM = False
     MAX_LENGTH = 32000
-    DEFAULT_CKPT_PATH = os.path.join(MODEL_DIR, 'ChineseErrorCorrector2-7B')
+    # DEFAULT_CKPT_PATH = os.path.join(MODEL_DIR, 'ChineseErrorCorrector2-7B')
+    # DEFAULT_CKPT_PATH="/home/tianwei/TW_NLP/ChineseErrorCorrector/data/business_data/model_output"
+    DEFAULT_CKPT_PATH = os.path.join(MODEL_DIR, '7b_merge_step2')
     GPU_MEMARY = 0.9
+
+
+class TrainConfig(object):
+    """
+    模型数据与模型保存
+    """
+    TRAIN_PATH = os.path.join(DATA_DIR, 'business_data', 'valid.json')
+    DEV_PATH = os.path.join(DATA_DIR, 'business_data', 'valid.json')
+    SAVE_PATH = os.path.join(DATA_DIR, 'business_data', 'model_output')
+    CACHE_PATH = os.path.join(DATA_DIR, 'cache')

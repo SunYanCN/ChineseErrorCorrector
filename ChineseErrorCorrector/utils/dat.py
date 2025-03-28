@@ -4,7 +4,7 @@ import random
 import json
 import os
 from ChineseErrorCorrector.config import LTPPath, DEVICE
-from ChineseErrorCorrector.utils import set_seed
+from ChineseErrorCorrector.utils.correct_tools import set_seed
 from tqdm import tqdm
 
 ltp = LTP(LTPPath.LTP_MODEL_DIR)
