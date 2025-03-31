@@ -4,13 +4,18 @@
 
 欢迎使用一键语法错误增强工具，该工具可以进行14种语法错误的增强，不同行业可以根据自己的数据进行错误替换，来训练自己的语法和拼写模型，荣获2024 CCL 冠军。
 
-使用：`pip install ChineseErrorCorrector`
+##使用
+- Install Conda: please see https://docs.conda.io/en/latest/miniconda.html
+- Create Conda env:
+``` sh
+conda create -n zh_correct -y python=3.9
+conda activate zh_correct
+pip install ChineseErrorCorrector
+# If you are in mainland China, you can set the mirror as follows:
+pip install ChineseErrorCorrector -i https://mirrors.aliyun.com/pypi/simple/ --trusted-host=mirrors.aliyun.com
+```
 
-开源不易，欢迎 star🌟
 
-pypi:https://pypi.org/project/ChineseErrorCorrector/
-
----
 
 ## 介绍
 
