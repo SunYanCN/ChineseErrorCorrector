@@ -17,7 +17,7 @@
 支持中文拼写和语法错误纠正，并开源拼写和语法错误的增强工具、大模型训练代码。荣获2024CCL 冠军 🏆，[查看论文](https://aclanthology.org/2024.ccl-3.31/) ，2023 [NLPCC-NaCGEC纠错冠军🏆](https://github.com/TW-NLP/ChineseErrorCorrector?tab=readme-ov-file#nacgec-%E6%95%B0%E6%8D%AE%E9%9B%86)， [2022 FCGEC 纠错冠军🏆](https://github.com/TW-NLP/ChineseErrorCorrector?tab=readme-ov-file#fcgec-%E6%95%B0%E6%8D%AE%E9%9B%86) ，如有帮助，感谢star✨。
 
 ## 🔥🔥🔥 新闻
-[2025/03/28] 新增大模型训练代码，不同领域可以训练自己的文本纠错大模型，大幅度提高自己的领域的纠错水平，[训练教程](https://github.com/TW-NLP/ChineseErrorCorrector?tab=readme-ov-file#%E8%AE%AD%E7%BB%83) ，[数据增强工具](https://github.com/TW-NLP/ChineseErrorCorrector/tree/0.1.0) 。
+[2025/03/28] 新增大模型训练代码，不同领域可以训练自己的文本纠错大模型，大幅度提高自己的领域的纠错水平，[训练教程](https://github.com/TW-NLP/ChineseErrorCorrector?tab=readme-ov-file#%E8%AE%AD%E7%BB%83) ，[数据增强工具](https://github.com/TW-NLP/ChineseErrorCorrector/blob/main/ChineseErrorCorrector/README_DAT.md) 。
 
 [2025/03/17] 更新批量错误文本的解析，[transformers批量解析](https://github.com/TW-NLP/ChineseErrorCorrector?tab=readme-ov-file#transformers-%E6%89%B9%E9%87%8F%E6%8E%A8%E7%90%86) ;[VLLM批量解析](https://github.com/TW-NLP/ChineseErrorCorrector?tab=readme-ov-file#vllm-%E5%BC%82%E6%AD%A5%E6%89%B9%E9%87%8F%E6%8E%A8%E7%90%86)
 
