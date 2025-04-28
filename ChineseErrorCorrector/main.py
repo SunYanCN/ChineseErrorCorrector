@@ -39,6 +39,7 @@ if __name__ == '__main__':
         "少先队员因该为老人让坐。",
         "大约半个小时左右"
     ]
+    # 是否使用VLLM进行推理
     if Qwen2TextCorConfig.USE_VLLM:
         loop = asyncio.get_event_loop()
         result = loop.run_until_complete(ec.vllm_infer(input_text))
