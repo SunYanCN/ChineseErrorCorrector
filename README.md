@@ -21,10 +21,7 @@
 ## 🔥🔥🔥 新闻
 
 [2025/04/24] 根据[建议](https://github.com/TW-NLP/ChineseErrorCorrector/issues/17)
-，我们重新训练纠错模型，并开源训练步骤，支持复现结果，[复现教程]()
-
-[2025/03/28]
-新增大模型训练代码，不同领域可以训练自己的文本纠错大模型，大幅度提高自己的领域的纠错水平，[训练教程](https://github.com/TW-NLP/ChineseErrorCorrector?tab=readme-ov-file#%E8%AE%AD%E7%BB%83) ，[数据增强工具](https://github.com/TW-NLP/ChineseErrorCorrector/blob/main/ChineseErrorCorrector/README_DAT.md) 。
+，我们重新训练纠错模型，并开源训练步骤，支持复现结果，[复现教程](https://github.com/TW-NLP/ChineseErrorCorrector/tree/main?tab=readme-ov-file#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C%E5%A4%8D%E7%8E%B0)
 
 [2025/03/17]
 更新批量错误文本的解析，[transformers批量解析](https://github.com/TW-NLP/ChineseErrorCorrector?tab=readme-ov-file#transformers-%E6%89%B9%E9%87%8F%E6%8E%A8%E7%90%86) ;[VLLM批量解析](https://github.com/TW-NLP/ChineseErrorCorrector?tab=readme-ov-file#vllm-%E5%BC%82%E6%AD%A5%E6%89%B9%E9%87%8F%E6%8E%A8%E7%90%86)
@@ -55,12 +52,12 @@ v0.1.0版本：开源一键语法错误增强工具，该工具可以进行14种
 
 ## 数据集
 
-| 数据集名称                        | 数据链接                                                                                             | 数据量和类别说明                                                                      | 描述                              |
-|:-----------------------------|:-------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------|:--------------------------------|
-| ChinseseErrorCorrectData     | [twnlp/ChinseseErrorCorrectData](https://huggingface.co/datasets/twnlp/ChinseseErrorCorrectData) | 200万                                                                          | ChineseErrorCorrector2-7B 训练数据集 |
-| CSC（拼写纠错数据集）                 | [twnlp/csc_data](https://huggingface.co/datasets/twnlp/csc_data)                                 | W271K：279,816 条，Medical：39,303 条，Lemon：22,259 条，ECSpell：6,688 条，CSCD：35,001 条 | 中文拼写纠错的数据集                      |
-| CGC（语法纠错数据集）                 | [twnlp/cgc_data](https://huggingface.co/datasets/twnlp/cgc_data)                                 | CGED：20449 条，FCGEC：37354 条，MuCGEC：2467 条，NaSGEC：7568条                         | 中文语法纠错的数据集                      |
-| Lang8+HSK（百万语料-拼写和语法错误混合数据集） | [twnlp/lang8_hsk](https://huggingface.co/datasets/twnlp/lang8_hsk)                               | 1568885条                                                                      | 中文拼写和语法数据集                      |
+| 数据集名称                        | 数据链接                                                                                             | 数据量和类别说明                                                                 | 描述                              |
+|:-----------------------------|:-------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------|:--------------------------------|
+| ChinseseErrorCorrectData     | [twnlp/ChinseseErrorCorrectData](https://huggingface.co/datasets/twnlp/ChinseseErrorCorrectData) | 200万                                                                     | ChineseErrorCorrector2-7B 训练数据集 |
+| CSC（拼写纠错数据集）                 | [twnlp/csc_data](https://huggingface.co/datasets/twnlp/csc_data)                                 | W271K(279,816) Medical(39,303) Lemon(22,259) ECSpell(6,688) CSCD(35,001) | 中文拼写纠错的数据集                      |
+| CGC（语法纠错数据集）                 | [twnlp/cgc_data](https://huggingface.co/datasets/twnlp/cgc_data)                                 | CGED(20,449) FCGEC(37,354条) MuCGEC(2467) NaSGEC(7568)                    | 中文语法纠错的数据集                      |
+| Lang8+HSK（百万语料-拼写和语法错误混合数据集） | [twnlp/lang8_hsk](https://huggingface.co/datasets/twnlp/lang8_hsk)                               | 1,568,885                                                                | 中文拼写和语法数据集                      |
 
 ## 拼写纠错评测
 
@@ -315,7 +312,7 @@ pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/ --tru
 
 ### 数据和模型的准备
 
-1、下载训练数据集：[twnlp/ChinseseErrorCorrectData](https://huggingface.co/datasets/twnlp/ChinseseErrorCorrectData) ，放在
+1、下载训练数据集：[twnlp/ChinseseErrorCorrectData](https://huggingface.co/datasets/twnlp/ChinseseErrorCorrectData) ,放在
 `/data/paper_data` 中。
 
 2、下载Qwen2.5-7B-Instruct：[Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) ,放在`/pre_model`中
