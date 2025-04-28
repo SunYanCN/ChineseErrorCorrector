@@ -80,8 +80,7 @@ v0.1.0版本：开源一键语法错误增强工具，该工具可以进行14种
 🏆
 | Model Name | Model Link | Prec | Rec | F0.5 |
 |:-----------------|:---------------------------------------------------------------|:-----------|:------------|:-------|
-|
-twnlp/ChineseErrorCorrector2-7B | [huggingface](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B) ； [modelspose(国内下载)](https://www.modelscope.cn/models/tiannlp/ChineseErrorCorrector2-7B)       | 0.5686 | 0.57 | 0.5689 |
+| twnlp/ChineseErrorCorrector2-7B | [huggingface](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B) ； [modelspose(国内下载)](https://www.modelscope.cn/models/tiannlp/ChineseErrorCorrector2-7B) | 0.5686 | 0.57 | 0.5689 |
 | HW_TSC_nlpcc2023_cgec(华为) | 未开源 | 0.5095 | 0.3129 | 0.4526 |
 | 鱼饼啾啾Plus(北京大学) | 未开源 | 0.5708 | 0.1294 | 0.3394 |
 | CUHK_SU(香港中文大学) | 未开源 | 0.3882 | 0.1558 | 0.2990 |
