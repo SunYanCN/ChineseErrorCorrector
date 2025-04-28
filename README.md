@@ -20,7 +20,7 @@
 
 ## 🔥🔥🔥 新闻
 
-[2025/04/24] 根据[建议](https://github.com/TW-NLP/ChineseErrorCorrector/issues/17)
+[2025/04/28] 根据[建议](https://github.com/TW-NLP/ChineseErrorCorrector/issues/17)
 ，我们重新训练纠错模型，并完全开源训练步骤，支持结果复现，[复现教程](https://github.com/TW-NLP/ChineseErrorCorrector/tree/main?tab=readme-ov-file#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C%E5%A4%8D%E7%8E%B0)
 
 [2025/03/17]
