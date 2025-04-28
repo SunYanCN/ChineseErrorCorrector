@@ -113,7 +113,7 @@ model = AutoModelForCausalLM.from_pretrained(
 tokenizer = AutoTokenizer.from_pretrained(model_name, padding_side='left')
 
 prompt = "你是一个文本纠错专家，纠正输入句子中的语法错误，并输出正确的句子，输入句子为："
-text_input = "少先队员因该为老人让坐。"
+text_input = "对待每一项工作都要一丝不够。"
 messages = [
     {"role": "user", "content": prompt + text_input}
 ]
@@ -159,7 +159,7 @@ sampling_params = SamplingParams(seed=42,max_tokens=512)
 llm = LLM(model="twnlp/ChineseErrorCorrector2-7B")
 
 # Prepare your prompts
-text_input = "少先队员因该为老人让坐。"
+text_input = "对待每一项工作都要一丝不够。"
 messages = [
     {"role": "user", "content": "你是一个文本纠错专家，纠正输入句子中的语法错误，并输出正确的句子，输入句子为："+text_input}
 ]
@@ -192,7 +192,7 @@ cd ChineseErrorCorrector
 - Create Conda env:
 
 ``` sh
-conda create -n zh_correct -y python=3.9
+conda create -n zh_correct -y python=3.10
 conda activate zh_correct
 pip install -r requirements.txt
 # If you are in mainland China, you can set the mirror as follows:
@@ -221,7 +221,7 @@ cd ChineseErrorCorrector
 - Create Conda env:
 
 ``` sh
-conda create -n zh_correct -y python=3.9
+conda create -n zh_correct -y python=3.10
 conda activate zh_correct
 pip install -r requirements.txt
 # If you are in mainland China, you can set the mirror as follows:
@@ -238,7 +238,7 @@ python main.py
 
 #输出：
 '''
-[{'source': '少先队员因该为老人让坐。', 'target': '少先队员应该为老人让座。', 'errors': [('因', '应', 4), ('坐', '座', 10)]}, {'source': '大约半个小时左右', 'target': '大约半个小时', 'errors': [('左右', '', 6)]}]
+[{'source': '对待每一项工作都要一丝不够。', 'target': '对待每一项工作都要一丝不苟。', 'errors': [('够', '苟', 12)]}, {'source': '大约半个小时左右', 'target': '大约半个小时', 'errors': [('左右', '', 6)]}]
 '''
 
 ```
@@ -262,7 +262,7 @@ model = AutoModelForCausalLM.from_pretrained(
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 prompt = "你是一个文本纠错专家，纠正输入句子中的语法错误，并输出正确的句子，输入句子为："
-text_input = "少先队员因该为老人让坐。"
+text_input = "对待每一项工作都要一丝不够。"
 messages = [
     {"role": "user", "content": prompt + text_input}
 ]

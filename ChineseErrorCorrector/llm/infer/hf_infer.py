@@ -8,7 +8,7 @@ from transformers import AutoTokenizer, StoppingCriteria, StoppingCriteriaList, 
 class HFTextCorrectInfer(object):
 
     def __init__(self, ):
-        set_seed(1000)
+        set_seed(42)
         self.prompt_prefix = "你是一个文本纠错专家，纠正输入句子中的语法错误，并输出正确的句子，输入句子为："
         if DEVICE == 'cpu':
             self.model = AutoModelForCausalLM.from_pretrained(
@@ -20,7 +20,7 @@ class HFTextCorrectInfer(object):
         else:
             self.model = AutoModelForCausalLM.from_pretrained(
                 Qwen2TextCorConfig.DEFAULT_CKPT_PATH,
-                torch_dtype="auto",
+                torch_dtype=torch.bfloat16,
                 device_map=DEVICE
             )
         self.tokenizer = AutoTokenizer.from_pretrained(Qwen2TextCorConfig.DEFAULT_CKPT_PATH, trust_remote_code=True,
@@ -51,8 +51,7 @@ class HFTextCorrectInfer(object):
         outputs = self.model.generate(
             inputs.input_ids,
             attention_mask=inputs.attention_mask,
-            max_new_tokens=1024,
-            do_sample=False,
+            max_new_tokens=512
         )
 
         # 批量解码输出
