@@ -7,16 +7,16 @@ SCRIPT_DIR=$(dirname "$(realpath "$0")")
 BASE_PATH=$(dirname "$SCRIPT_DIR")/..
 
 
-# 业务领域训练数据
-TRAIN_FILE="${BASE_PATH}/data/business_data/train.json"
-# 业务领域测试数据
-DEV_FILE="${BASE_PATH}/data/business_data/dev.json"
+# Lang8+HSK
+TRAIN_FILE="${BASE_PATH}/data/paper_data/train_stage1.json"
+# NaCGEC test 数据集
+DEV_FILE="${BASE_PATH}/data/paper_data/test_nacgec.json"
 # 训练模型路径
-MODEL_NAME="${BASE_PATH}/pre_model/ChineseErrorCorrector2-7B"
+MODEL_NAME="${BASE_PATH}/pre_model/Qwen2.5-7B-Instruct"
 # LoRA 训练的存储目录
-OUTPUT_DIR="${BASE_PATH}/data/business_data/model_output"
+OUTPUT_DIR="${BASE_PATH}/data/paper_data/model_output_stage1"
 # 数据 cache 目录
-CACHE_DIR="${BASE_PATH}/data/business_data/cache_dir"
+CACHE_DIR="${BASE_PATH}/data/paper_data/cache_dir_1"
 
 # 运行训练脚本
 python ${BASE_PATH}/llm/train/run.py \
@@ -29,16 +29,16 @@ python ${BASE_PATH}/llm/train/run.py \
     --bf16 True \
     --device cuda \
     --num_train_epochs 5 \
-    --learning_rate 2e-5 \
+    --learning_rate 5e-5 \
     --logging_steps 50 \
     --max_steps -1 \
-    --per_device_train_batch_size 8 \
-    --gradient_accumulation_steps 1 \
-    --warmup_steps 50 \
-    --save_steps 1000 \
+    --per_device_train_batch_size 32 \
+    --gradient_accumulation_steps 2\
+    --warmup_steps 1000 \
+    --save_steps 100000 \
     --optimizer adamw_torch \
     --save_strategy steps \
-    --eval_steps 1000 \
+    --eval_steps 100000 \
     --save_total_limit 10 \
     --report_to tensorboard \
     --overwrite_output_dir True \
