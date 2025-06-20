@@ -19,9 +19,10 @@
 ，如有帮助，感谢star✨。
 
 ## 🔥🔥🔥 新闻
+[2025/06/20] 发布[twnlp/ChineseErrorCorrector3-4B](https://huggingface.co/twnlp/ChineseErrorCorrector3-4B) 🎉🎉🎉，超越第一名 ChineseErrorCorrector2-7B 18个点，持续领先，推荐使用✨✨。
 
 [2025/04/28] 根据[建议](https://github.com/TW-NLP/ChineseErrorCorrector/issues/17)
-，我们重新训练纠错模型，并完全开源训练步骤，支持结果复现，[复现教程](https://github.com/TW-NLP/ChineseErrorCorrector/tree/main?tab=readme-ov-file#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C%E5%A4%8D%E7%8E%B0)
+，我们重新训练纠错模型，并完全开源训练步骤，支持结果复现，[复现教程](https://github.com/TW-NLP/ChineseErrorCorrector/tree/v0.4.0?tab=readme-ov-file#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C%E5%A4%8D%E7%8E%B0)
 
 [2025/03/17]
 更新批量错误文本的解析，[transformers批量解析](https://github.com/TW-NLP/ChineseErrorCorrector?tab=readme-ov-file#transformers-%E6%89%B9%E9%87%8F%E6%8E%A8%E7%90%86) ;[VLLM批量解析](https://github.com/TW-NLP/ChineseErrorCorrector?tab=readme-ov-file#vllm-%E5%BC%82%E6%AD%A5%E6%89%B9%E9%87%8F%E6%8E%A8%E7%90%86)
@@ -80,6 +81,7 @@ v0.1.0版本：🎉🎉🎉开源一键语法错误增强工具，该工具可�
 🏆
 | Model Name | Model Link | Prec | Rec | F0.5 |
 |:-----------------|:---------------------------------------------------------------|:-----------|:------------|:-------|
+| twnlp/ChineseErrorCorrector3-4B | [huggingface](https://huggingface.co/twnlp/ChineseErrorCorrector3-4B) ； [modelspose(国内下载)](https://www.modelscope.cn/models/tiannlp/ChineseErrorCorrector3-4B) | 0.743 | 0.7294 | 0.7402 |
 | twnlp/ChineseErrorCorrector2-7B | [huggingface](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B) ； [modelspose(国内下载)](https://www.modelscope.cn/models/tiannlp/ChineseErrorCorrector2-7B) | 0.5686 | 0.57 | 0.5689 |
 | HW_TSC_nlpcc2023_cgec(华为) | 未开源 | 0.5095 | 0.3129 | 0.4526 |
 | 鱼饼啾啾Plus(北京大学) | 未开源 | 0.5708 | 0.1294 | 0.3394 |
@@ -103,14 +105,14 @@ pip install transformers
 from transformers import AutoModelForCausalLM, AutoTokenizer,set_seed
 set_seed(42)
 
-model_name = "twnlp/ChineseErrorCorrector2-7B"
+model_name = "twnlp/ChineseErrorCorrector3-4B"
 
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
     torch_dtype="auto",
     device_map="auto"
 )
-tokenizer = AutoTokenizer.from_pretrained(model_name, padding_side='left')
+tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 prompt = "你是一个文本纠错专家，纠正输入句子中的语法错误，并输出正确的句子，输入句子为："
 text_input = "对待每一项工作都要一丝不够。"
@@ -118,10 +120,11 @@ messages = [
     {"role": "user", "content": prompt + text_input}
 ]
 text = tokenizer.apply_chat_template(
-    messages,
-    tokenize=False,
-    add_generation_prompt=True
-)
+        messages,
+        tokenize=False,
+        add_generation_prompt=True,
+        enable_thinking=False # Switches between thinking and non-thinking modes. Default is True.
+    )
 model_inputs = tokenizer([text], return_tensors="pt").to(model.device)
 
 generated_ids = model.generate(
@@ -141,7 +144,7 @@ print(response)
 
 ```shell
 pip install transformers
-pip install vllm==0.3.3
+pip install vllm
 ```
 
 ```shell
@@ -149,14 +152,14 @@ from transformers import AutoTokenizer
 from vllm import LLM, SamplingParams
 
 # Initialize the tokenizer
-tokenizer = AutoTokenizer.from_pretrained("twnlp/ChineseErrorCorrector2-7B")
+tokenizer = AutoTokenizer.from_pretrained("twnlp/ChineseErrorCorrector3-4B")
 
-# Pass the default decoding hyperparameters of twnlp/ChineseErrorCorrector2-7B
+# Pass the default decoding hyperparameters of twnlp/ChineseErrorCorrector3-4B
 # max_tokens is for the maximum length for generation.
 sampling_params = SamplingParams(seed=42,max_tokens=512)
 
 # Input the model name or path. Can be GPTQ or AWQ models.
-llm = LLM(model="twnlp/ChineseErrorCorrector2-7B")
+llm = LLM(model="twnlp/ChineseErrorCorrector3-4B")
 
 # Prepare your prompts
 text_input = "对待每一项工作都要一丝不够。"
@@ -201,7 +204,7 @@ pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/ --tru
 
 ```sh
 # 修改config.py
-#（1）根据不同的模型，修改的DEFAULT_CKPT_PATH，默认为ChineseErrorCorrector2-7B(将模型下载，放在ChineseErrorCorrector/pre_model/ChineseErrorCorrector2-7B)
+#（1）根据不同的模型，修改的DEFAULT_CKPT_PATH，默认为twnlp/ChineseErrorCorrector3-4B(将模型下载，放在ChineseErrorCorrector/pre_model/twnlp/ChineseErrorCorrector3-4B)
 #（2）将Qwen2TextCorConfig的USE_VLLM = True
 
 #批量预测
@@ -230,7 +233,7 @@ pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/ --tru
 
 ``` sh
 # 修改config.py
-#（1）根据不同的模型，修改的DEFAULT_CKPT_PATH，默认为ChineseErrorCorrector2-7B
+#（1）根据不同的模型，修改的DEFAULT_CKPT_PATH，默认为twnlp/ChineseErrorCorrector3-4B
 #（2）将Qwen2TextCorConfig的USE_VLLM = False
 
 #批量预测
@@ -252,7 +255,7 @@ pip install modelscope
 ```shell
 from modelscope import AutoModelForCausalLM, AutoTokenizer
 
-model_name = "tiannlp/ChineseErrorCorrector2-7B"
+model_name = "tiannlp/twnlp/ChineseErrorCorrector3-4B"
 
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
@@ -267,10 +270,11 @@ messages = [
     {"role": "user", "content": prompt + text_input}
 ]
 text = tokenizer.apply_chat_template(
-    messages,
-    tokenize=False,
-    add_generation_prompt=True
-)
+        messages,
+        tokenize=False,
+        add_generation_prompt=True,
+        enable_thinking=False # Switches between thinking and non-thinking modes. Default is True.
+    )
 model_inputs = tokenizer([text], return_tensors="pt").to(model.device)
 
 generated_ids = model.generate(
@@ -286,51 +290,6 @@ print(response)
 
 ```
 
-## 实验结果复现
-
-### 环境准备
-
-- Clone the repo
-
-``` sh
-git clone https://github.com/TW-NLP/ChineseErrorCorrector
-cd ChineseErrorCorrector
-```
-
-- Install Conda: please see https://docs.conda.io/en/latest/miniconda.html
-- Create Conda env:
-
-``` sh
-conda create -n zh_correct -y python=3.10
-conda activate zh_correct
-pip install -r requirements.txt
-# If you are in mainland China, you can set the mirror as follows:
-pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/ --trusted-host=mirrors.aliyun.com
-```
-
-### 数据和模型的准备
-
-1、下载训练数据集：[twnlp/ChinseseErrorCorrectData](https://huggingface.co/datasets/twnlp/ChinseseErrorCorrectData) ,放在
-`/data/paper_data` 中。
-
-2、下载Qwen2.5-7B-Instruct：[Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) ,放在`/pre_model`中
-
-### 模型训练与合并
-
-``` sh
-
-# Lang8+HSK 训练
-bash ./llm/train/run1.sh
-bash ./llm/train/merge1.sh
-
-# CGC+CSC 数据集训练
-bash ./llm/train/run2.sh
-bash ./llm/train/merge2.sh
-
-# Nacgec 数据集训练
-bash ./llm/train/run3.sh
-bash ./llm/train/merge3.sh
-``` 
 
 ## Citation
 
