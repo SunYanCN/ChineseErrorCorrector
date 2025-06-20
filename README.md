@@ -235,7 +235,7 @@ pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/ --tru
 ``` sh
 # 修改config.py
 #（1）根据不同的模型，修改的DEFAULT_CKPT_PATH，默认为twnlp/ChineseErrorCorrector3-4B
-#（2）将Qwen2TextCorConfig的USE_VLLM = False
+#（2）将TextCorrectConfig的USE_VLLM = False
 
 #批量预测
 python main.py
