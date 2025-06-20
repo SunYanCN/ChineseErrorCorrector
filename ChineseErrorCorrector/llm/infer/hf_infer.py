@@ -38,7 +38,9 @@ class HFTextCorrectInfer(object):
 
         # 批量编码所有输入
         input_texts = [
-            self.tokenizer.apply_chat_template(msg, tokenize=False, add_generation_prompt=True)
+            self.tokenizer.apply_chat_template(msg, tokenize=False,
+                                               add_generation_prompt=True,
+                                               enable_thinking=False)
             for msg in messages
         ]
         inputs = self.tokenizer.batch_encode_plus(
