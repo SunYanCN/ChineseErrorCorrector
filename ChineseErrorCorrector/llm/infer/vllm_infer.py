@@ -1,7 +1,7 @@
 import torch
 import uuid
 
-from ChineseErrorCorrector.config import DEVICE, DEVICE_COUNT, Qwen2TextCorConfig
+from ChineseErrorCorrector.config import DEVICE, DEVICE_COUNT, TextCorrectConfig
 from transformers import AutoTokenizer, StoppingCriteria, StoppingCriteriaList, TextIteratorStreamer, AutoModel, \
     AutoModelForCausalLM, set_seed
 from vllm import SamplingParams, AsyncLLMEngine, AsyncEngineArgs
@@ -25,20 +25,20 @@ class VLLMTextCorrectInfer(object):
             capability = torch.cuda.get_device_capability(device)
             # T4 算力为7.5 无法使用BF16，改为float16
             if capability[0] < 8:
-                model_args = AsyncEngineArgs(Qwen2TextCorConfig.DEFAULT_CKPT_PATH,
+                model_args = AsyncEngineArgs(TextCorrectConfig.DEFAULT_CKPT_PATH,
                                              tensor_parallel_size=DEVICE_COUNT,
                                              dtype='float16',
                                              trust_remote_code=True
-                                             , gpu_memory_utilization=Qwen2TextCorConfig.GPU_MEMARY,
-                                             max_model_len=Qwen2TextCorConfig.MAX_LENGTH)
+                                             , gpu_memory_utilization=TextCorrectConfig.GPU_MEMARY,
+                                             max_model_len=TextCorrectConfig.MAX_LENGTH)
             else:
-                model_args = AsyncEngineArgs(Qwen2TextCorConfig.DEFAULT_CKPT_PATH,
+                model_args = AsyncEngineArgs(TextCorrectConfig.DEFAULT_CKPT_PATH,
                                              tensor_parallel_size=DEVICE_COUNT,
                                              trust_remote_code=True
-                                             , gpu_memory_utilization=Qwen2TextCorConfig.GPU_MEMARY,
-                                             max_model_len=Qwen2TextCorConfig.MAX_LENGTH)
+                                             , gpu_memory_utilization=TextCorrectConfig.GPU_MEMARY,
+                                             max_model_len=TextCorrectConfig.MAX_LENGTH)
             self.model = AsyncLLMEngine.from_engine_args(model_args)
-            self.tokenizer = AutoTokenizer.from_pretrained(Qwen2TextCorConfig.DEFAULT_CKPT_PATH, trust_remote_code=True)
+            self.tokenizer = AutoTokenizer.from_pretrained(TextCorrectConfig.DEFAULT_CKPT_PATH, trust_remote_code=True)
 
     async def generate(self, query):
         """
@@ -67,7 +67,7 @@ class VLLMTextCorrectInfer(object):
             sampling = SamplingParams(
                 use_beam_search=False,
                 seed=42,
-                max_tokens=Qwen2TextCorConfig.MAX_LENGTH
+                max_tokens=TextCorrectConfig.MAX_LENGTH
             )
             inputs = {'prompt': query, "prompt_token_ids": prompt_token_ids}
             generator = self.model.generate(

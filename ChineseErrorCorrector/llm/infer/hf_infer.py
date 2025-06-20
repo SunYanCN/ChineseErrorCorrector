@@ -1,6 +1,6 @@
 import torch
 
-from ChineseErrorCorrector.config import DEVICE, DEVICE_COUNT, Qwen2TextCorConfig
+from ChineseErrorCorrector.config import DEVICE, DEVICE_COUNT, TextCorrectConfig
 from transformers import AutoTokenizer, StoppingCriteria, StoppingCriteriaList, TextIteratorStreamer, AutoModel, \
     AutoModelForCausalLM, set_seed
 
@@ -12,18 +12,18 @@ class HFTextCorrectInfer(object):
         self.prompt_prefix = "你是一个文本纠错专家，纠正输入句子中的语法错误，并输出正确的句子，输入句子为："
         if DEVICE == 'cpu':
             self.model = AutoModelForCausalLM.from_pretrained(
-                Qwen2TextCorConfig.DEFAULT_CKPT_PATH,
+                TextCorrectConfig.DEFAULT_CKPT_PATH,
                 # cpu不支持 float16,改用bfloat16
                 torch_dtype=torch.bfloat16,
                 device_map="cpu"
             )
         else:
             self.model = AutoModelForCausalLM.from_pretrained(
-                Qwen2TextCorConfig.DEFAULT_CKPT_PATH,
+                TextCorrectConfig.DEFAULT_CKPT_PATH,
                 torch_dtype=torch.bfloat16,
                 device_map=DEVICE
             )
-        self.tokenizer = AutoTokenizer.from_pretrained(Qwen2TextCorConfig.DEFAULT_CKPT_PATH, trust_remote_code=True,
+        self.tokenizer = AutoTokenizer.from_pretrained(TextCorrectConfig.DEFAULT_CKPT_PATH, trust_remote_code=True,
                                                        padding_side='left')
 
     def infer(self, input_list):
