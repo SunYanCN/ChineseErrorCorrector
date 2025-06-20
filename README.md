@@ -45,11 +45,12 @@ v0.1.0版本：🎉🎉🎉开源一键语法错误增强工具，该工具可�
 
 ## 模型列表
 
-| 模型名称                                                                                        | 纠错类型  | 描述                                        |
-|:--------------------------------------------------------------------------------------------|:------|:------------------------------------------|
-| [twnlp/ChineseErrorCorrector2-7B](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B)   | 语法+拼写 | 使用200万纠错数据进行多轮迭代训练，适用于语法纠错和拼写纠错，效果好，推荐使用。 |
-| [twnlp/ChineseErrorCorrector-7B](https://huggingface.co/twnlp/ChineseErrorCorrector-7B)     | 拼写    | 使用38万开源拼写数据，支持语似、形似等拼写错误纠正，拼写纠错效果好。       |
-| [twnlp/ChineseErrorCorrector-1.5B](https://huggingface.co/twnlp/ChineseErrorCorrector-1.5B) | 拼写    | 使用38万开源拼写数据，支持语似、形似等拼写错误纠正，拼写纠错效果一般。      |
+| 模型名称                                                                                        | 纠错类型  | 描述                                         |
+|:--------------------------------------------------------------------------------------------|:------|:-------------------------------------------|
+| [twnlp/ChineseErrorCorrector3-4B](https://huggingface.co/twnlp/ChineseErrorCorrector3-4B)   | 语法+拼写 | 使用200万纠错数据进行全量训练，适用于语法纠错和拼写纠错，效果最好，推荐使用。   |
+| [twnlp/ChineseErrorCorrector2-7B](https://huggingface.co/twnlp/ChineseErrorCorrector2-7B)   | 语法+拼写 | 使用200万纠错数据进行多轮迭代训练，适用于语法纠错和拼写纠错，效果较好。 |
+| [twnlp/ChineseErrorCorrector-7B](https://huggingface.co/twnlp/ChineseErrorCorrector-7B)     | 拼写    | 使用38万开源拼写数据，支持语似、形似等拼写错误纠正，拼写纠错效果好。        |
+| [twnlp/ChineseErrorCorrector-1.5B](https://huggingface.co/twnlp/ChineseErrorCorrector-1.5B) | 拼写    | 使用38万开源拼写数据，支持语似、形似等拼写错误纠正，拼写纠错效果一般。       |
 
 ## 数据集
 
