@@ -6,7 +6,7 @@ from ChineseErrorCorrector.llm.infer.hf_infer import HFTextCorrectInfer
 from ChineseErrorCorrector.llm.infer.vllm_infer import VLLMTextCorrectInfer
 from ChineseErrorCorrector.utils.correct_tools import res_format
 import asyncio
-from ChineseErrorCorrector.config import Qwen2TextCorConfig
+from ChineseErrorCorrector.config import TextCorrectConfig
 
 
 class ErrorCorrect(object):
@@ -15,7 +15,7 @@ class ErrorCorrect(object):
     """
 
     def __init__(self):
-        if Qwen2TextCorConfig.USE_VLLM:
+        if TextCorrectConfig.USE_VLLM:
             self.llm_correct_vllm = VLLMTextCorrectInfer()
         else:
             self.llm_correct_hf = HFTextCorrectInfer()
@@ -40,7 +40,7 @@ if __name__ == '__main__':
         "大约半个小时左右"
     ]
     # 是否使用VLLM进行推理
-    if Qwen2TextCorConfig.USE_VLLM:
+    if TextCorrectConfig.USE_VLLM:
         loop = asyncio.get_event_loop()
         result = loop.run_until_complete(ec.vllm_infer(input_text))
         print(result)

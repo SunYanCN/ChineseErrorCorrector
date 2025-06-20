@@ -15,15 +15,15 @@ class LTPPath(object):
     LTP_DATA_PATH = os.path.join(DATA_DIR, 'dat_data')
 
 
-# 需要将ChineseErrorCorrector2-7B下载下来，放在pre_model中
-class Qwen2TextCorConfig(object):
+# 需要将ChineseErrorCorrector3-4B下载下来，放在pre_model中
+class TextCorrectConfig(object):
     """
     模型位置
     """
     # 是否采用VLLM进行异步推理，工程化推荐
     USE_VLLM = False
     MAX_LENGTH = 32000
-    DEFAULT_CKPT_PATH = os.path.join(MODEL_DIR, 'ChineseErrorCorrector2-7B')
+    DEFAULT_CKPT_PATH = os.path.join(MODEL_DIR, 'ChineseErrorCorrector3-4B')
     GPU_MEMARY = 0.9
 
 
