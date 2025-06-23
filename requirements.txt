@@ -77,8 +77,6 @@ kiwisolver==1.4.8
 lark==1.2.2
 lazy_loader==0.4
 librosa==0.11.0
-# Editable install with no version control (llamafactory==0.9.3.dev0)
--e /home/huidian/tw/LLaMA_Factory
 llguidance==0.7.10
 llvmlite==0.43.0
 lm-format-enforcer==0.10.11
