@@ -7,9 +7,9 @@ from transformers import AutoTokenizer, StoppingCriteria, StoppingCriteriaList, 
 from vllm import SamplingParams, AsyncLLMEngine, AsyncEngineArgs
 import time
 import copy
-
+import asyncio
+import traceback
 from ChineseErrorCorrector.utils.correct_tools import torch_gc
-
 
 
 class VLLMTextCorrectInfer(object):
@@ -19,7 +19,7 @@ class VLLMTextCorrectInfer(object):
         self.prompt_prefix = "你是一个文本纠错专家，纠正输入句子中的语法错误，并输出正确的句子，输入句子为："
 
         if DEVICE == 'cpu':
-            pass
+            raise ValueError("VLLM does not support CPU inference, please use GPU for inference.")
         else:
             device = torch.device(DEVICE)
             capability = torch.cuda.get_device_capability(device)
@@ -40,101 +40,100 @@ class VLLMTextCorrectInfer(object):
             self.model = AsyncLLMEngine.from_engine_args(model_args)
             self.tokenizer = AutoTokenizer.from_pretrained(TextCorrectConfig.DEFAULT_CKPT_PATH, trust_remote_code=True)
 
-    async def generate(self, query):
+    async def generate_async(self, query):
         """
-        非流式输出
+        完整的异步生成方法
         :param query:
         :return:
         """
         try:
-            start_time = time.time()
-            request_id = str(uuid.uuid4())
-            messages = [
-                {"role": "user", "content": self.prompt_prefix + query}
-            ]
-
-            # prompt中的assistant 改为 system
-
-            inputs = self.tokenizer.apply_chat_template(
-                messages,
-                add_generation_prompt=True,
-                tokenize=True,
-                return_tensors="pt",
-                return_dict=True
-            )
-            prompt_token_ids = inputs['input_ids'].tolist()[0]
-
-            sampling = SamplingParams(
-                use_beam_search=False,
+            # 初始化 SamplingParams
+            sampling_params = SamplingParams(
                 seed=42,
+                temperature=0.6,
+                top_k=20,
+                top_p=0.95,
+                stop=[],
                 max_tokens=TextCorrectConfig.MAX_LENGTH
             )
-            inputs = {'prompt': query, "prompt_token_ids": prompt_token_ids}
-            generator = self.model.generate(
-                **inputs,
-                sampling_params=sampling,
+
+            request_id = str(uuid.uuid4())
+            prompt = self.prompt_prefix + query  # 添加 no_thinking 后缀以避免思考过程
+
+            messages = [
+                {"role": "user", "content": prompt}
+            ]
+            text = self.tokenizer.apply_chat_template(
+                messages,
+                tokenize=False,
+                add_generation_prompt=True,
+                enable_thinking=False,  # Set to False to strictly disable thinking
+            )
+
+            # # 获取异步生成器
+            result = self.model.generate(
+                text,  # 或者使用 prompt=messages
+                sampling_params=sampling_params,
                 request_id=request_id
             )
 
-            result_list = []
-            result_list_tokens = []
+            # 使用异步非流式输出处理结果
+            complete_text = await self.no_stream_output(result, request_id)
 
-            async for request_i in generator:
-                result_list.append(str(request_i.outputs[0].text))
-                result_list_tokens.append(request_i.outputs[0].token_ids)
+            return complete_text
 
-            print(f'Token的生成速度：{len(result_list_tokens[-1]) / (time.time() - start_time)}')
+        except Exception as e:
+            print(f"Error in generation: {e}")
+            return None
 
-            return str(result_list[-1])
-        except Exception as err:
-            print(err)
-            if 'CUDA out of memory' in err.args[0]:
-                raise MemoryError(err)
-
-        if DEVICE != "cpu":
-            torch_gc()
-
-    async def infer(self, req_json):
-
-        # 大模型的纠错推理
-        prompts, querys = await self.parse_request(req_json)
-
-        result = [await self.generate(query_i) for query_i in prompts]
-
-        return result
-
-    async def infer_sentence(self, user_inputs):
-        result = [await self.generate(query_i) for query_i in user_inputs]
-        return result
-
-    async def parse_request(self, req_json):
+    async def no_stream_output(self, result, request_id):
         """
-                {
-          "contents": [
-                "少先队员因该为老人让坐。",
-                "我的明子叫小明"
-          ]
-
-        }
-        :param req_json:
+        纠错大模型的异步非流式
+        :param result: 异步迭代器
+        :param request_id: 请求id
         :return:
         """
 
-        req_json_copy = copy.deepcopy(req_json)
+        # 用于累积完整响应
+        complete_text = ""
 
-        query_list = req_json_copy.get('prompt')
+        try:
+            count = 0
 
-        prompt = []
-        # 增加文本纠错的prompt
-        for pmt_i in query_list:
-            prompt_sys = {}
-            prompt_user = {}
-            prompt_user['role'] = "user"
-            prompt_user['content'] = self.prompt_prefix + pmt_i
+            # 使用 async for 来迭代异步生成器
+            async for request_output in result:
+                count += 1
 
-            prompt.append([prompt_sys, prompt_user])
+                # 检查是否是我们要的请求ID
+                if request_output.request_id == request_id:
 
-        return prompt, query_list
+                    if request_output.outputs and len(request_output.outputs) > 0:
+                        output = request_output.outputs[0]
+
+                        # 累积完整文本（VLLM会返回累积的完整文本，不需要手动拼接）
+                        complete_text = output.text
+
+                        # 如果生成完成，退出循环
+                        if request_output.finished:
+                            break
+                else:
+                    pass
+
+        except Exception as e:
+            traceback.print_exc()
+            raise
+
+        # 检查是否获得了完整结果
+        if not complete_text:
+            raise ValueError("生成器没有返回任何文本")
+
+        return complete_text
+
+    async def infer_sentence(self, user_inputs):
+        tasks = [self.generate_async(query_i) for query_i in user_inputs]
+        result = await asyncio.gather(*tasks, return_exceptions=True)
+
+        return result
 
 
 if __name__ == '__main__':

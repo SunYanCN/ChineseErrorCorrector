@@ -20,8 +20,8 @@ class ErrorCorrect(object):
         else:
             self.llm_correct_hf = HFTextCorrectInfer()
 
-    async def vllm_infer(self, input_list):
-        res = await self.llm_correct_vllm.infer_sentence(input_list)
+    def vllm_infer(self, input_list):
+        res = asyncio.run(self.llm_correct_vllm.infer_sentence(input_list))
         res_ = res_format(input_list, res)
         return res_
 
@@ -32,7 +32,7 @@ class ErrorCorrect(object):
 
 
 if __name__ == '__main__':
-    ec = ErrorCorrect()
+    infer_enginer = ErrorCorrect()
 
     # 测试用例
     input_text = [
@@ -41,9 +41,8 @@ if __name__ == '__main__':
     ]
     # 是否使用VLLM进行推理
     if TextCorrectConfig.USE_VLLM:
-        loop = asyncio.get_event_loop()
-        result = loop.run_until_complete(ec.vllm_infer(input_text))
-        print(result)
+        result=infer_enginer.vllm_infer(input_text)
+
     else:
-        result = ec.hf_infer(input_text)
-        print(result)
+        result = infer_enginer.hf_infer(input_text)
+    print(result)
