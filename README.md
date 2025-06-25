@@ -171,7 +171,7 @@ text = tokenizer.apply_chat_template(
     messages,
     tokenize=False,
     add_generation_prompt=True,
-    enable_thinking=True
+    enable_thinking=False
 )
 
 # generate outputs
