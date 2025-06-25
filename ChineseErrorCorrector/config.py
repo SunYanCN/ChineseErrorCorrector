@@ -1,7 +1,6 @@
 import os
 import torch
-# os.environ["NCCL_P2P_DISABLE"] = "1"
-os.environ['CUDA_VISIBLE_DEVICES'] = "0,1"
+
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 MODEL_DIR = os.path.join(PROJECT_DIR, 'pre_model')
