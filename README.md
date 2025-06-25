@@ -145,7 +145,7 @@ print(response)
 
 ```shell
 pip install transformers
-pip install vllm
+pip install vllm==0.8.5
 ```
 
 ```shell
@@ -170,7 +170,8 @@ messages = [
 text = tokenizer.apply_chat_template(
     messages,
     tokenize=False,
-    add_generation_prompt=True
+    add_generation_prompt=True,
+    enable_thinking=True
 )
 
 # generate outputs
@@ -183,7 +184,7 @@ for output in outputs:
     print(f"Prompt: {prompt!r}, Generated text: {generated_text!r}") 
 ```
 
-### VLLM 异步批量推理
+### VLLM 异步批量推理(工程推荐)
 
 - Clone the repo
 
