@@ -14,14 +14,14 @@
 
 ## 介绍
 
-支持中文拼写和语法错误纠正，并开源拼写和语法错误的增强工具、大模型训练代码。荣获2024CCL 冠军
+支持中文拼写和语法错误纠正，并开源[拼写和语法错误的增强工具](https://github.com/TW-NLP/ChineseErrorCorrector/tree/0.1.0)、大模型训练代码。荣获2024CCL 冠军
 🏆，[查看论文](https://aclanthology.org/2024.ccl-3.31/) ，[2023 NLPCC-NaCGEC纠错冠军🏆](https://github.com/TW-NLP/ChineseErrorCorrector?tab=readme-ov-file#nacgec-%E6%95%B0%E6%8D%AE%E9%9B%86)， [2022 FCGEC 纠错冠军🏆](https://github.com/TW-NLP/ChineseErrorCorrector?tab=readme-ov-file#fcgec-%E6%95%B0%E6%8D%AE%E9%9B%86)
 ，如有帮助，感谢star✨。
 
 ## 🔥🔥🔥 新闻
-[2025/08/04] 发布[twnlp/ChineseErrorCorrector3-4B](https://huggingface.co/twnlp/ChineseErrorCorrector3-4B) 🎉🎉🎉，泛化性全面提升，在开源的所有模型中，位列第一，[详细榜单](https://github.com/TW-NLP/ChineseErrorCorrector?tab=readme-ov-file#evaluation)。
+[2025/08/06] 发布[twnlp/ChineseErrorCorrector3-4B](https://huggingface.co/twnlp/ChineseErrorCorrector3-4B) 🎉🎉🎉，泛化性全面提升，在开源的所有模型中，位列第一，[详细榜单](https://github.com/TW-NLP/ChineseErrorCorrector?tab=readme-ov-file#evaluation)。
 
-[2025/04/28] 根据[建议](https://github.com/TW-NLP/ChineseErrorCorrector/issues/17)
+[2025/05/01] 根据[建议](https://github.com/TW-NLP/ChineseErrorCorrector/issues/17)
 ，我们重新训练纠错模型(ChineseErrorCorrector2-7B)，并完全开源训练步骤，支持结果复现，[复现教程](https://github.com/TW-NLP/ChineseErrorCorrector/tree/v0.4.0?tab=readme-ov-file#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C%E5%A4%8D%E7%8E%B0)
 
 [2025/03/17]
