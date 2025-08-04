@@ -58,7 +58,7 @@ v0.1.0版本：🎉🎉🎉开源一键语法错误增强工具，该工具可�
 |:-----------------------------|:-------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------|:--------------------------------|
 | ChinseseErrorCorrectData     | [twnlp/ChinseseErrorCorrectData](https://huggingface.co/datasets/twnlp/ChinseseErrorCorrectData) | 200万                                                                     | ChineseErrorCorrector2-7B 训练数据集 |
 | CSC（拼写纠错数据集）                 | [twnlp/csc_data](https://huggingface.co/datasets/twnlp/csc_data)                                 | W271K(279,816) Medical(39,303) Lemon(22,259) ECSpell(6,688) CSCD(35,001) | 中文拼写纠错的数据集                      |
-| CGC（语法纠错数据集）                 | [twnlp/cgc_data](https://huggingface.co/datasets/twnlp/cgc_data)                                 | CGED(20,449) FCGEC(37,354) MuCGEC(2,467) NaSGEC(7,568)                   | 中文语法纠错的数据集                      |
+| CGC（语法纠错数据集）                 | [twnlp/cgc_data](https://huggingface.co/datasets/twnlp/cgc_data)                                 | CGED(20,449) FCGEC(37,354) MuCGEC(2,467) NaCGEC(7,568)                   | 中文语法纠错的数据集                      |
 | Lang8+HSK（百万语料-拼写和语法错误混合数据集） | [twnlp/lang8_hsk](https://huggingface.co/datasets/twnlp/lang8_hsk)                               | 1,568,885                                                                | 中文拼写和语法数据集                      |
 
 
