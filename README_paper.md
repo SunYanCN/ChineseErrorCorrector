@@ -1,7 +1,7 @@
 # Chinese Text Correction Papers
 
 
-This repo aims to keep tracking related work in Chinese text correction, including Chinese Spell Checking (CSC) and Chinese Grammatical Error Correction (CGEC).
+We created this repository to continuously track research progress in Chinese text correction, including Chinese Spell Checking (CSC) and Chinese Grammatical Error Correction (CGEC).
 Welcome to contribute!
 
 ## 2024
