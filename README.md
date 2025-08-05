@@ -62,7 +62,7 @@ v0.1.0版本：🎉🎉🎉开源一键语法错误增强工具，该工具可�
 | Lang8+HSK（百万语料-拼写和语法错误混合数据集） | [twnlp/lang8_hsk](https://huggingface.co/datasets/twnlp/lang8_hsk)                               | 1,568,885                                                                | 中文拼写和语法数据集                      |
 
 
-## Evaluation（泛化性的权威评测）
+## Evaluation（泛化性评测）
 
 
 ### 评估结果
