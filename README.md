@@ -318,6 +318,7 @@ If this work is helpful, please kindly cite as:
 }
 ```
 
-## Star History
+## References
 
-![Star History Chart](https://api.star-history.com/svg?repos=TW-NLP/ChineseErrorCorrector&type=Date)
+* [中文纠错系统](https://github.com/shibing624/pycorrector)
+* [纠错论文]()
