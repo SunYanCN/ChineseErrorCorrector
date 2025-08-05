@@ -8,7 +8,7 @@ Welcome to contribute!
 ## 2025
 |paper|conference|resource|labels|
 |:---:|:---:|:---:|:---:|
-|MTCSC: Retrieval-Augmented Iterative Refinement for Chinese Spelling Correction|arxiv|[[pdf](https://arxiv.org/pdf/2504.18938) ] |![](https://img.shields.io/badge/CSC-green)|
+|MTCSC: Retrieval-Augmented Iterative Refinement for Chinese Spelling Correction|arxiv|[[pdf](https://arxiv.org/pdf/2504.18938)] |![](https://img.shields.io/badge/CSC-green)|
 
 
 
