@@ -4,10 +4,19 @@
 We created this repository to continuously track research progress in Chinese text correction, including Chinese Spell Checking (CSC) and Chinese Grammatical Error Correction (CGEC).
 Welcome to contribute!
 
+
+## 2025
+|paper|conference|resource|labels|
+|:---:|:---:|:---:|:---:|
+|MTCSC: Retrieval-Augmented Iterative Refinement for Chinese Spelling
+Correction|ACL2025|[[pdf](https://arxiv.org/pdf/2504.18938) [] |![](https://img.shields.io/badge/CSC-green)|
+
+
+
 ## 2024
-|paper|conference|resource|citation|labels|
-|:---:|:---:|:---:|:---:|:---:|
-|Chinese Spelling Correction as Rephrasing Language Model|AAAI2024|[[pdf](https://arxiv.org/pdf/2308.08796.pdf) [[code](https://github.com/Claude-Liu/ReLM)] |![citation](https://img.shields.io/badge/dynamic/json?label=citation&query=citationCount&url=https%3A%2F%2Fapi.semanticscholar.org%2Fgraph%2Fv1%2Fpaper%2Fc1b9d7dea2e96340997aa541250868e62080f0b5%3Ffields%3DcitationCount)|![](https://img.shields.io/badge/CSC-green)|
+|paper|conference|resource|labels|
+|:---:|:---:|:---:|:---:|
+|Chinese Spelling Correction as Rephrasing Language Model|AAAI2024|[[pdf](https://arxiv.org/pdf/2308.08796.pdf) [[code](https://github.com/Claude-Liu/ReLM)] |![](https://img.shields.io/badge/CSC-green)|
 
 
 
