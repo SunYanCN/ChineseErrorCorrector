@@ -321,4 +321,4 @@ If this work is helpful, please kindly cite as:
 ## References
 
 * [中文纠错系统](https://github.com/shibing624/pycorrector)
-* [纠错论文]()
+* [纠错论文](https://github.com/nghuyong/Chinese-text-correction-papers)
