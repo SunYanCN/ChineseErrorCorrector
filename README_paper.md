@@ -16,6 +16,8 @@ Welcome to contribute!
 |paper|conference|resource|labels|
 |:---:|:---:|:---:|:---:|
 |Chinese Spelling Correction as Rephrasing Language Model|AAAI2024|[[pdf](https://arxiv.org/pdf/2308.08796.pdf)] [[code](https://github.com/Claude-Liu/ReLM)] |![](https://img.shields.io/badge/CSC-green)|
+|Rethinking the Roles of Large Language Models in Chinese Grammatical Error Correction|arxiv|[[pdf](https://arxiv.org/pdf/2402.11420)] [[code]] |![](https://img.shields.io/badge/CGEC-blue)|
+
 
 
 
