@@ -8,6 +8,7 @@ Welcome to contribute!
 ## 2025
 |paper|conference|resource|labels|
 |:---:|:---:|:---:|:---:|
+|A Training‑free LLM‑based Approach to General Chinese Character Error Correction|ACL2025|[[pdf](https://arxiv.org/pdf/2502.15266)] [[code](https://github.com/Jacob-Zhou/simple-csc/tree/v2.0.0)] |![](https://img.shields.io/badge/CSC-green)|
 |Mixture of Small and Large Models for Chinese Spelling Check|ACL2025|[[pdf](http://aclanthology.org/2025.acl-long.1372.pdf)] [[code](https://github.com/zhqiao-nlp/MSLLM)] |![](https://img.shields.io/badge/CSC-green)|
 |MTCSC: Retrieval-Augmented Iterative Refinement for Chinese Spelling Correction|arxiv|[[pdf](https://arxiv.org/pdf/2504.18938)] |![](https://img.shields.io/badge/CSC-green)|
 |Rethinking the Roles of Large Language Models in Chinese Grammatical Error Correction|ACL2025|[[pdf](https://arxiv.org/pdf/2402.11420)] |![](https://img.shields.io/badge/CGEC-blue)|
