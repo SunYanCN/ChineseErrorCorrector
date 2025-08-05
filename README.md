@@ -62,7 +62,7 @@ v0.1.0版本：🎉🎉🎉开源一键语法错误增强工具，该工具可�
 | Lang8+HSK（百万语料-拼写和语法错误混合数据集） | [twnlp/lang8_hsk](https://huggingface.co/datasets/twnlp/lang8_hsk)                               | 1,568,885                                                                | 中文拼写和语法数据集                      |
 
 
-## Evaluation
+## Evaluation（泛化性的权威评测）
 
 
 ### 评估结果
@@ -82,7 +82,7 @@ v0.1.0版本：🎉🎉🎉开源一键语法错误增强工具，该工具可�
 | Qwen2.5-7B-CTC    | [shibing624/chinese-text-correction-7b](https://huggingface.co/shibing624/chinese-text-correction-7b)                   | Qwen/Qwen2.5-7B-Instruct       | 0.8225     | 0.4917      | 0.9798 | 0.9959 | GPU     | 3       |
 | **Qwen3-4B-CTC(Our)** | [twnlp/ChineseErrorCorrector3-4B](https://huggingface.co/twnlp/ChineseErrorCorrector3-4B)                   | Qwen/Qwen3-4B                  | **0.8521** | 0.6340      | 0.9360 | 0.9864 | GPU     | 5       |
 
-## 文本纠错评测(双冠军 🏆)
+## 文本纠错竞赛评测(双冠军 🏆)
 
 ### NaCGEC 数据集
 
