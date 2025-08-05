@@ -9,7 +9,7 @@ Welcome to contribute!
 |paper|conference|resource|labels|
 |:---:|:---:|:---:|:---:|
 |MTCSC: Retrieval-Augmented Iterative Refinement for Chinese Spelling Correction|arxiv|[[pdf](https://arxiv.org/pdf/2504.18938)] |![](https://img.shields.io/badge/CSC-green)|
-|Rethinking the Roles of Large Language Models in Chinese Grammatical Error Correction|ACL2025|[[pdf](https://arxiv.org/pdf/2402.11420)] [[code]] |![](https://img.shields.io/badge/CGEC-blue)|
+|Rethinking the Roles of Large Language Models in Chinese Grammatical Error Correction|ACL2025|[[pdf](https://arxiv.org/pdf/2402.11420)] |![](https://img.shields.io/badge/CGEC-blue)|
 
 
 ## 2024
