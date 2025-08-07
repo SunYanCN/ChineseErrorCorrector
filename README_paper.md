@@ -17,8 +17,10 @@ Welcome to contribute!
 ## 2024
 |paper|conference|resource|labels|
 |:---:|:---:|:---:|:---:|
+|GEE! Grammar Error Explanation with Large Language Models|ACL2024|[[pdf]([https://arxiv.org/pdf/2308.08796.pdf](https://aclanthology.org/2024.findings-naacl.49.pdf))] [[code](https://github.com/Yixiao-Song/GEE-with-LLMs)] |![](https://img.shields.io/badge/CSC-green)|
 |Detection-Correction Structure via General Language Model for Grammatical Error Correction|ACL2024|[[pdf](https://aclanthology.org/2024.acl-long.96.pdf)] [[code](https://github.com/GMago-LeWay/GECFramework)] |![](https://img.shields.io/badge/CSC-green)|
 |Chinese Spelling Correction as Rephrasing Language Model|AAAI2024|[[pdf](https://arxiv.org/pdf/2308.08796.pdf)] [[code](https://github.com/Claude-Liu/ReLM)] |![](https://img.shields.io/badge/CSC-green)|
+
 
 
 
