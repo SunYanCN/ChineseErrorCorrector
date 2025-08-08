@@ -13,6 +13,8 @@ class LTPPath(object):
     LTP_MODEL_DIR = os.path.join(MODEL_DIR, 'ltp_tiny')
     LTP_DATA_PATH = os.path.join(DATA_DIR, 'dat_data')
 
+class StanzaPath(object):
+    STANZA_DATA_PATH = os.path.join(DATA_DIR, 'stanza','stanza_resources_1.7.0.json')
 
 # 需要将ChineseErrorCorrector3-4B下载下来，放在pre_model中
 class TextCorrectConfig(object):
