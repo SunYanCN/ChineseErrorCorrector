@@ -1,4 +1,4 @@
-# 通用文本纠错评测工具 common-ERRANT
+# 通用文本纠错评测工具（Common-ERRANT）
 
 ## 一、环境准备
 
