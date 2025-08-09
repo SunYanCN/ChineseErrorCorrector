@@ -326,3 +326,4 @@ If this work is helpful, please kindly cite as:
 
 * [中文纠错系统](https://github.com/shibing624/pycorrector)
 * [纠错论文](https://github.com/nghuyong/Chinese-text-correction-papers)
+* [纠错评测](https://github.com/open-writing-evaluation/jp_errant_bea)
