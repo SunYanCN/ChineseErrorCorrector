@@ -1,6 +1,6 @@
 # 中文拼写和语法纠错
 
-[**🇨🇳中文**](https://github.com/TW-NLP/ChineseErrorCorrector/blob/main/README.md)
+[**🇨🇳中文**](https://github.com/TW-NLP/ChineseErrorCorrector/blob/main/README.md) [**English**](https://github.com/TW-NLP/ChineseErrorCorrector/blob/main/README_EN.md)
 
 <div align="center">
   <a href="https://github.com/TW-NLP/ChineseErrorCorrector">

@@ -1,21 +1,11 @@
 # Chinese Spelling and Grammar Correction
 
-[**English**](https://www.google.com/search?q=https://github.com/TW-NLP/ChineseErrorCorrector/blob/main/README_en.md) | [**中文[CN]**](https://github.com/TW-NLP/ChineseErrorCorrector/blob/main/README.md)
 
-\<div align="center">
-\<a href="[https://github.com/TW-NLP/ChineseErrorCorrector](https://github.com/TW-NLP/ChineseErrorCorrector)">
-\<img src="images/image\_fx\_.jpg" alt="Logo" height="156">
-\</a>
-\</div>
-
----
-
-## Introduction
-
-This project supports Chinese spelling and grammar error correction. We have also open-sourced an \[augmentation tool for spelling and grammar errorshttps\://github.com/TW-NLP/ChineseErrorCorrector">
-\<img src="images/image\_fx\_.jpg" alt="Logo" height="156">
-\</a>
-\</div>
+<div align="center">
+  <a href="https://github.com/TW-NLP/ChineseErrorCorrector">
+    <img src="images/image_fx_.jpg" alt="Logo" height="156">
+  </a>
+</div>
 
 ---
 
