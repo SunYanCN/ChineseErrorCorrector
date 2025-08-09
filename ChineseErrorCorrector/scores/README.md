@@ -1,5 +1,6 @@
 # 通用文本纠错评测工具（Common-ERRANT）
 
+支持的语言包含80种，[详情🔎](https://stanfordnlp.github.io/stanza/performance.html)
 ## 一、环境准备
 
 ``` sh
