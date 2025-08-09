@@ -1,6 +1,6 @@
 # 中文拼写和语法纠错
 
-[**🇨🇳中文**](https://github.com/TW-NLP/ChineseErrorCorrector/blob/main/README.md) [**English**](https://github.com/TW-NLP/ChineseErrorCorrector/blob/main/README_EN.md)
+[**🇨🇳中文**](https://github.com/TW-NLP/ChineseErrorCorrector/blob/main/README.md)   [**English**](https://github.com/TW-NLP/ChineseErrorCorrector/blob/main/README_EN.md)
 
 <div align="center">
   <a href="https://github.com/TW-NLP/ChineseErrorCorrector">
@@ -14,12 +14,12 @@
 
 ## 介绍
 
-支持中文拼写和语法错误纠正，并开源[拼写和语法错误的增强工具](https://github.com/TW-NLP/ChineseErrorCorrector/tree/0.1.0)、大模型训练代码、[文本纠错相关论文](https://github.com/TW-NLP/ChineseErrorCorrector/blob/main/README_paper.md)。荣获2024CCL 冠军
+支持中文拼写和语法错误纠正，并开源[拼写和语法错误的增强工具](https://github.com/TW-NLP/ChineseErrorCorrector/tree/0.1.0)、大模型训练代码、[文本纠错相关论文](https://github.com/TW-NLP/ChineseErrorCorrector/blob/main/README_paper.md)和[通用的文本纠错评测画工具](https://github.com/TW-NLP/ChineseErrorCorrector/blob/main/ChineseErrorCorrector/scores/README.md)。荣获2024CCL 冠军
 🏆，[查看论文](https://aclanthology.org/2024.ccl-3.31/) ，[2023 NLPCC-NaCGEC纠错冠军🏆](https://github.com/TW-NLP/ChineseErrorCorrector?tab=readme-ov-file#nacgec-%E6%95%B0%E6%8D%AE%E9%9B%86)， [2022 FCGEC 纠错冠军🏆](https://github.com/TW-NLP/ChineseErrorCorrector?tab=readme-ov-file#fcgec-%E6%95%B0%E6%8D%AE%E9%9B%86)
 ，如有帮助，感谢star✨。
 
 ## 🔥🔥🔥 新闻
-[2025/08/08] 发布[通用的文本评测工具（支持80中语言）](https://github.com/TW-NLP/ChineseErrorCorrector/blob/main/ChineseErrorCorrector/scores/README.md) 🎉，可以在低资源上进行文本纠错的评测。
+[2025/08/08] 发布[通用的文本评测工具（支持80种语言）](https://github.com/TW-NLP/ChineseErrorCorrector/blob/main/ChineseErrorCorrector/scores/README.md) 🎉，可以在低资源上进行文本纠错的评测。
 
 [2025/08/06] 发布[文本纠错相关论文（持续更新版）](https://github.com/TW-NLP/ChineseErrorCorrector/blob/main/README_paper.md) 🥳，方便大家进行研学。
 
