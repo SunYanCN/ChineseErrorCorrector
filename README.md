@@ -200,7 +200,7 @@ for output in outputs:
     print(f"Prompt: {prompt!r}, Generated text: {generated_text!r}") 
 ```
 
-### VLLM 异步批量推理(工程推荐)
+### 👍 VLLM 异步批量推理(工程推荐)
 
 - Clone the repo
 
