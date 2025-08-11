@@ -108,7 +108,10 @@ v0.1.0版本：🎉🎉🎉开源一键语法错误增强工具，该工具可�
 
 [评测🏆](https://codalab.lisn.upsaclay.fr/competitions/8020#results)
 
-## 使用
+## 🚀 快速开始
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212284158-e840e285-664b-44d7-b79b-e264b5e54825.gif" width="400">
+</div>
 
 ### 🤗 transformers
 
