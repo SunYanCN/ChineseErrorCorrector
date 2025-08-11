@@ -105,7 +105,7 @@ v0.1.0版本：🎉🎉🎉开源一键语法错误增强工具，该工具可�
 
 - 评估指标：binary_f1
 
-[评测🔗](https://codalab.lisn.upsaclay.fr/competitions/8020#results)
+- [评测🔗](https://codalab.lisn.upsaclay.fr/competitions/8020#results)
 
 ## 🚀 快速开始
 <div align="center">
