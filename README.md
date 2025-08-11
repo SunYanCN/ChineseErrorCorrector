@@ -47,7 +47,7 @@
 [2024/06]
 v0.1.0版本：🎉🎉🎉开源一键语法错误增强工具，该工具可以进行14种语法错误的增强，不同行业可以根据自己的数据进行错误替换，来训练自己的语法和拼写模型。详见[Tag-v0.1.0](https://github.com/TW-NLP/ChineseErrorCorrector/tree/0.1.0)
 
-## 模型列表
+## 🎯模型列表
 
 | 模型名称                                                                                        | 纠错类型  | 描述                                         |
 |:--------------------------------------------------------------------------------------------|:------|:-------------------------------------------|
@@ -56,7 +56,7 @@ v0.1.0版本：🎉🎉🎉开源一键语法错误增强工具，该工具可�
 | [twnlp/ChineseErrorCorrector-7B](https://huggingface.co/twnlp/ChineseErrorCorrector-7B)     | 拼写    | 使用38万开源拼写数据，支持语似、形似等拼写错误纠正，拼写纠错效果好。        |
 | [twnlp/ChineseErrorCorrector-1.5B](https://huggingface.co/twnlp/ChineseErrorCorrector-1.5B) | 拼写    | 使用38万开源拼写数据，支持语似、形似等拼写错误纠正，拼写纠错效果一般。       |
 
-## 数据集
+## 📊数据集
 
 | 数据集名称                        | 数据链接                                                                                             | 数据量和类别说明                                                                 | 描述                              |
 |:-----------------------------|:-------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------|:--------------------------------|
@@ -66,10 +66,10 @@ v0.1.0版本：🎉🎉🎉开源一键语法错误增强工具，该工具可�
 | Lang8+HSK（百万语料-拼写和语法错误混合数据集） | [twnlp/lang8_hsk](https://huggingface.co/datasets/twnlp/lang8_hsk)                               | 1,568,885                                                                | 中文拼写和语法数据集                      |
 
 
-## Evaluation（泛化性评测）
+##  🏗️ Evaluation
 
 
-### 评估结果
+### 泛化性评测
 - 评估指标：F1
 - CSC(Chinese Spelling Correction): 拼写纠错模型，表示模型可以处理音似、形似、语法等长度对齐的错误纠正
 - CTC(CHinese Text Correction): 文本纠错模型，表示模型支持拼写、语法等长度对齐的错误纠正，还可以处理多字、少字等长度不对齐的错误纠正
@@ -86,9 +86,9 @@ v0.1.0版本：🎉🎉🎉开源一键语法错误增强工具，该工具可�
 | Qwen2.5-7B-CTC    | [shibing624/chinese-text-correction-7b](https://huggingface.co/shibing624/chinese-text-correction-7b)                   | Qwen/Qwen2.5-7B-Instruct       | 0.8225     | 0.4917      | 0.9798 | 0.9959 | GPU     | 3       |
 | **Qwen3-4B-CTC(Our)** | [twnlp/ChineseErrorCorrector3-4B](https://huggingface.co/twnlp/ChineseErrorCorrector3-4B)                   | Qwen/Qwen3-4B                  | **0.8521** | 0.6340      | 0.9360 | 0.9864 | GPU     | 5       |
 
-## 文本纠错竞赛评测(双冠军 🏆)
+### 语法纠错(双冠军 🏆)
 
-### NaCGEC 数据集
+#### NaCGEC 数据集
 
 - 评估工具：ChERRANT  [评测工具](https://github.com/HillZhang1999/MuCGEC)
 - 评估数据：[NaCGEC](https://github.com/masr2000/NaCGEC)
@@ -102,7 +102,7 @@ v0.1.0版本：🎉🎉🎉开源一键语法错误增强工具，该工具可�
 | 鱼饼啾啾Plus(北京大学) | 未开源 | 0.5708 | 0.1294 | 0.3394 |
 | CUHK_SU(香港中文大学) | 未开源 | 0.3882 | 0.1558 | 0.2990 |
 
-### FCGEC 数据集
+####  FCGEC 数据集
 
 - 评估指标：binary_f1
 
