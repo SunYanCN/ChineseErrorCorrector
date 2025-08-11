@@ -88,13 +88,12 @@ v0.1.0版本：🎉🎉🎉开源一键语法错误增强工具，该工具可�
 
 ### 语法纠错(双冠军 🏆)
 
-#### NaCGEC 数据集
+#### NaCGEC 数据集 🏆
 
 - 评估工具：ChERRANT  [评测工具](https://github.com/HillZhang1999/MuCGEC)
 - 评估数据：[NaCGEC](https://github.com/masr2000/NaCGEC)
 - 评估指标：F1-0.5
 
-🏆
 | Model Name | Model Link | Prec | Rec | F0.5 |
 |:-----------------|:---------------------------------------------------------------|:-----------|:------------|:-------|
 | twnlp/ChineseErrorCorrector3-4B | [huggingface](https://huggingface.co/twnlp/ChineseErrorCorrector3-4B) ； [modelspose(国内下载)](https://www.modelscope.cn/models/tiannlp/ChineseErrorCorrector3-4B) | 0.542 | 0.3475 | 0.4874 |
@@ -102,11 +101,11 @@ v0.1.0版本：🎉🎉🎉开源一键语法错误增强工具，该工具可�
 | 鱼饼啾啾Plus(北京大学) | 未开源 | 0.5708 | 0.1294 | 0.3394 |
 | CUHK_SU(香港中文大学) | 未开源 | 0.3882 | 0.1558 | 0.2990 |
 
-####  FCGEC 数据集
+####  FCGEC 数据集 🏆
 
 - 评估指标：binary_f1
 
-[评测🏆](https://codalab.lisn.upsaclay.fr/competitions/8020#results)
+[评测🔗](https://codalab.lisn.upsaclay.fr/competitions/8020#results)
 
 ## 🚀 快速开始
 <div align="center">
