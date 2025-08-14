@@ -19,7 +19,7 @@
 ，如有帮助，感谢star✨。
 
 ## 🔥🔥🔥 新闻
-[2025/08/08] 发布[通用的文本评测工具（支持80种语言）](https://github.com/TW-NLP/ChineseErrorCorrector/blob/main/ChineseErrorCorrector/scores/README.md) 🎉，可以在低资源上进行文本纠错的评测。
+[2025/08/08] 发布[通用的文本评测工具-Common Errant（支持80种语言）](https://github.com/TW-NLP/ChineseErrorCorrector/blob/main/ChineseErrorCorrector/scores/README.md) 🎉，可以在高（中文、英文）、低资源（印地语、孟加拉语等）上进行文本纠错的评测。
 
 [2025/08/06] 发布[文本纠错相关论文（持续更新版）](https://github.com/TW-NLP/ChineseErrorCorrector/blob/main/README_paper.md) 🥳，方便大家进行研学。
 
