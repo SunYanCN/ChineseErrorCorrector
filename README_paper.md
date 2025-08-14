@@ -8,7 +8,7 @@ Welcome to contribute!
 ## 2025
 |paper|conference|resource|labels|
 |:---:|:---:|:---:|:---:|
-|Explanation based In-Context Demonstrations Retrieval for Multilingual Grammatical Error Correction|NAACL2025|[[pdf]([https://arxiv.org/pdf/2412.12832](https://aclanthology.org/2025.naacl-long.251.pdf#:~:text=correspond%20to%20similar%20grammatical%20error,shot%20experiments%20on))] [[code](https://github.com/GMago-LeWay/FewShotGEC)] |![](https://img.shields.io/badge/CGEC-blue)|
+|Explanation based In-Context Demonstrations Retrieval for Multilingual Grammatical Error Correction|NAACL2025|[[pdf]([https://arxiv.org/pdf/2412.12832](https://aclanthology.org/2025.naacl-long.251.pdf#:~:text=correspond%20to%20similar%20grammatical%20error,shot%20experiments%20on)] [[code](https://github.com/GMago-LeWay/FewShotGEC)] |![](https://img.shields.io/badge/CGEC-blue)|
 |Retrieval-Augmented Generation for Large Language Model based Few-shot Chinese Spell Checking|COLING 2025|[[pdf](https://aclanthology.org/2025.coling-main.717.pdf)][[code](https://github.com/ViTsing/RagID)] |![](https://img.shields.io/badge/CSC-green)|
 |DSGram: Dynamic Weighting Sub-Metrics for Grammatical Error Correction|AAAI2025|[[pdf](https://arxiv.org/pdf/2412.12832)] [[code](https://github.com/jxtse/GEC-Metrics-DSGram)] |![](https://img.shields.io/badge/CGEC-blue)|
 |A Training‑free LLM‑based Approach to General Chinese Character Error Correction|ACL2025|[[pdf](https://arxiv.org/pdf/2502.15266)] [[code](https://github.com/Jacob-Zhou/simple-csc/tree/v2.0.0)] |![](https://img.shields.io/badge/CSC-green)|
