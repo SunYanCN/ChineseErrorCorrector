@@ -46,7 +46,7 @@ python parallel_to_m2.py -orig path/to/test.txt -cor path/to/pred.txt -out path/
 运行以下命令对比参考标准和预测结果，计算 F1 分数：
 
 ```bash
-python compare_m2.py reference.m2 hypothesis.m2
+python compare_m2.py -ref reference.m2 -hyp hypothesis.m2
 ```
 
 
